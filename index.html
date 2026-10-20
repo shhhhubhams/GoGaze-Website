@@ -46,7 +46,7 @@
         {"@type": "Question", "name": "Can I choose to show my ad only in certain parts of Kolkata?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times."}},
         {"@type": "Question", "name": "How quickly can I change my ad?", "acceptedAnswer": {"@type": "Answer", "text": "The same day. New creatives are pushed to the screens remotely, with no reprinting or reinstalling."}},
         {"@type": "Question", "name": "How do I know my ad actually ran?", "acceptedAnswer": {"@type": "Answer", "text": "Every play is logged with location and time, and you get a report of where and when your ad was shown."}},
-        {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pilot rates depend on your areas and hours. Book a demo and GoGaze will share them on a call."}},
+        {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pilot rates depend on your areas and hours. Get in touch and GoGaze will share them on a call."}},
         {"@type": "Question", "name": "I own a taxi. How do I join?", "acceptedAnswer": {"@type": "Answer", "text": "Register on the GoGaze website. GoGaze installs and maintains the screen at no cost to you and pays you every month once it is live."}}
       ]
     }
@@ -102,7 +102,7 @@ body{margin:0;background:#0D0D0B}
 .gg .btn-taxi{background:var(--taxi);color:var(--ink)}
 .gg .btn-taxi:hover{background:#ffd55c}
 .gg .btn-ghost{border:1.5px solid currentColor;background:transparent;color:inherit}
-@media (max-width:860px){.gg .nav ul{display:none}}
+@media (max-width:860px){.gg .nav ul li:not(:last-child){display:none}}
 
 /* hero */
 .gg .hero{padding-top:120px;position:relative}
@@ -361,9 +361,9 @@ body{margin:0;background:#0D0D0B}
         <li><a href="#brands">For brands</a></li>
         <li><a href="#owners">For taxi owners</a></li>
         <li><a href="#investors">Investors</a></li>
+        <li><a href="#contact">Contact us</a></li>
       </ul>
     </nav>
-    <a class="btn btn-ink" href="#contact" data-role="Brand" data-magnet>Book a demo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
 </header>
 
@@ -379,7 +379,7 @@ body{margin:0;background:#0D0D0B}
       <div class="hero-sub fade-in">
         <p>GoGaze puts digital screens on taxi roofs. Choose what plays, on which street, at what hour, and change it from your phone.</p>
         <div class="cta">
-          <a class="btn btn-ink" href="#contact" data-role="Brand" data-magnet>Book a demo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn btn-ink" href="#contact" data-role="Brand" data-magnet>Start your campaign <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a class="btn btn-ghost" href="#owners">I own a taxi</a>
         </div>
       </div>
@@ -549,7 +549,7 @@ body{margin:0;background:#0D0D0B}
           <details><summary>Can I choose to show my ad only in certain parts of Kolkata?<i aria-hidden="true"></i></summary><p>Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times.</p></details>
           <details><summary>How quickly can I change my ad?<i aria-hidden="true"></i></summary><p>The same day. New creatives are pushed to the screens remotely, with no reprinting or reinstalling.</p></details>
           <details><summary>How do I know my ad actually ran?<i aria-hidden="true"></i></summary><p>Every play is logged with location and time, and you get a report of where and when your ad was shown.</p></details>
-          <details><summary>How much does it cost?<i aria-hidden="true"></i></summary><p>Pilot rates depend on your areas and hours. Book a demo and we will share them on a call.</p></details>
+          <details><summary>How much does it cost?<i aria-hidden="true"></i></summary><p>Pilot rates depend on your areas and hours. Get in touch and we will share them on a call.</p></details>
           <details><summary>I own a taxi. How do I join?<i aria-hidden="true"></i></summary><p>Register below. We install and maintain the screen at no cost to you and pay you every month once it is live.</p></details>
         </div>
       </div>
@@ -763,7 +763,7 @@ function ggInit(root){
   // nav: underline the link for the part of the page in view
   // brand and owner cards sit side by side on wide screens, so the underline follows whichever was picked last (brands by default); a click also wins while its jump runs
   var navLinks=qa('.nav ul a'),cardPick='brands',pickT=0,cB=root.querySelector('#brands'),cO=root.querySelector('#owners');
-  function navOn(id){if((id==='brands'||id==='owners')&&(Date.now()-pickT<1800||cB&&cO&&Math.abs(cB.getBoundingClientRect().top-cO.getBoundingClientRect().top)<2))id=cardPick;navLinks.forEach(function(a){var h=a.getAttribute('href').slice(1);a.classList.toggle('on',h===id&&(id!=='contact'||a.getAttribute('data-role')===(root.querySelector('input[name=role]:checked')||{}).value))})}
+  function navOn(id){if((id==='brands'||id==='owners')&&(Date.now()-pickT<1800||cB&&cO&&Math.abs(cB.getBoundingClientRect().top-cO.getBoundingClientRect().top)<2))id=cardPick;navLinks.forEach(function(a){var h=a.getAttribute('href').slice(1);a.classList.toggle('on',h===id)})}
   qa('a[href="#brands"], a[href="#owners"]').forEach(function(a){on(a,'click',function(){cardPick=a.getAttribute('href').slice(1);pickT=Date.now();navOn(cardPick)})});
   var navIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)navOn(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
   ['how','brands','owners','investors','contact'].forEach(function(id){var el=root.querySelector('#'+id);if(el)navIO.observe(el)});
