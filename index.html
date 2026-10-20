@@ -42,9 +42,8 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Is GoGaze live yet?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. The first GoGaze screens go live in Kolkata with the pilot, and founding brands get the first slots."}},
         {"@type": "Question", "name": "What is taxi-top advertising?", "acceptedAnswer": {"@type": "Answer", "text": "Digital screens mounted on taxi roofs that show ads as the taxi drives through the city. GoGaze controls what plays remotely, so ads can change by area and time of day."}},
-        {"@type": "Question", "name": "Can I show my ad only in certain parts of Kolkata?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times."}},
+        {"@type": "Question", "name": "Can I choose to show my ad only in certain parts of Kolkata?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times."}},
         {"@type": "Question", "name": "How quickly can I change my ad?", "acceptedAnswer": {"@type": "Answer", "text": "The same day. New creatives are pushed to the screens remotely, with no reprinting or reinstalling."}},
         {"@type": "Question", "name": "How do I know my ad actually ran?", "acceptedAnswer": {"@type": "Answer", "text": "Every play is logged with location and time, and you get a report of where and when your ad was shown."}},
         {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pilot rates depend on your areas and hours. Book a demo and GoGaze will share them on a call."}},
@@ -208,14 +207,14 @@ body{margin:0;background:#0D0D0B}
 .gg .ov4 div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line-d)}
 .gg .ov4 div:last-child{border:0}
 .gg .ov4 b{color:var(--cyan);font-weight:500}
-.gg .steps .step{min-height:56vh;display:flex;flex-direction:column;justify-content:center;gap:18px;opacity:.28;transition:opacity .5s}
+.gg .steps .step{min-height:42vh;display:flex;flex-direction:column;justify-content:center;gap:18px;opacity:.28;transition:opacity .5s}
 .gg .steps .step.on{opacity:1}
 .gg .steps .num{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(80px,9vw,140px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--cyan)}
 .gg .steps p{margin:0;max-width:440px;font-size:18px}
 @media (max-width:860px){
   .gg .how-grid{grid-template-columns:minmax(0,1fr)}
   .gg .map-col{top:72px;height:46vh;z-index:2}
-  .gg .steps .step{min-height:54vh}
+  .gg .steps .step{min-height:34vh}
 }
 
 /* scheduler */
@@ -308,6 +307,8 @@ body{margin:0;background:#0D0D0B}
 @media (max-width:560px){.gg form{grid-template-columns:minmax(0,1fr)}}
 .gg form label{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500}
 .gg form .full{grid-column:1 / -1}
+.gg form .opt{display:none;font-style:normal;font-weight:400;opacity:.6}
+.gg form.owner .opt{display:inline}
 .gg .tel{display:flex;gap:8px}
 .gg .tel select{flex:0 0 112px;width:112px;appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:26px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%230D0D0B' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:10px 6px}
 .gg .tel input{flex:1;min-width:0}
@@ -544,9 +545,8 @@ body{margin:0;background:#0D0D0B}
       <div class="faq">
         <h2 data-reveal>Before<br>you ask.</h2>
         <div>
-          <details open><summary>Is GoGaze live yet?<i aria-hidden="true"></i></summary><p>Not yet. Our first screens go live in Kolkata with the pilot, and founding brands get the first slots.</p></details>
-          <details><summary>What is taxi-top advertising?<i aria-hidden="true"></i></summary><p>Digital screens mounted on taxi roofs that show ads as the taxi drives through the city. GoGaze controls what plays remotely, so ads can change by area and time of day.</p></details>
-          <details><summary>Can I show my ad only in certain parts of Kolkata?<i aria-hidden="true"></i></summary><p>Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times.</p></details>
+          <details open><summary>What is taxi-top advertising?<i aria-hidden="true"></i></summary><p>Digital screens mounted on taxi roofs that show ads as the taxi drives through the city. GoGaze controls what plays remotely, so ads can change by area and time of day.</p></details>
+          <details><summary>Can I choose to show my ad only in certain parts of Kolkata?<i aria-hidden="true"></i></summary><p>Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times.</p></details>
           <details><summary>How quickly can I change my ad?<i aria-hidden="true"></i></summary><p>The same day. New creatives are pushed to the screens remotely, with no reprinting or reinstalling.</p></details>
           <details><summary>How do I know my ad actually ran?<i aria-hidden="true"></i></summary><p>Every play is logged with location and time, and you get a report of where and when your ad was shown.</p></details>
           <details><summary>How much does it cost?<i aria-hidden="true"></i></summary><p>Pilot rates depend on your areas and hours. Book a demo and we will share them on a call.</p></details>
@@ -577,9 +577,9 @@ body{margin:0;background:#0D0D0B}
             <p class="role-msg" data-role-msg aria-live="polite">Your ad, moving through the city. Tell us where, we'll handle the rest.</p>
           </fieldset>
           <label>Name<input name="name" autocomplete="name" required></label>
-          <label>Company<input name="company" autocomplete="organization"></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Phone<span class="tel"><select name="country_code" aria-label="Country code" autocomplete="tel-country-code"><option value="+91" title="India" selected>IN +91</option><option value="+971" title="United Arab Emirates"None>AE +971</option><option value="+1" title="United States / Canada"None>US +1</option><option value="+44" title="United Kingdom"None>GB +44</option><option value="+65" title="Singapore"None>SG +65</option><option value="+966" title="Saudi Arabia"None>SA +966</option><option value="+974" title="Qatar"None>QA +974</option><option value="+880" title="Bangladesh"None>BD +880</option><option value="+977" title="Nepal"None>NP +977</option><option value="+94" title="Sri Lanka"None>LK +94</option><option value="+61" title="Australia"None>AU +61</option><option value="+49" title="Germany"None>DE +49</option><option value="+33" title="France"None>FR +33</option><option value="+31" title="Netherlands"None>NL +31</option><option value="+81" title="Japan"None>JP +81</option><option value="+852" title="Hong Kong"None>HK +852</option><option value="+60" title="Malaysia"None>MY +60</option></select><input name="phone" type="tel" autocomplete="tel-national" placeholder="98765 43210" aria-label="Phone number"></span></label>
+          <label><span>Company <em class="opt">(optional)</em></span><input name="company" autocomplete="organization"></label>
+          <label><span>Email <em class="opt">(optional)</em></span><input name="email" type="email" autocomplete="email" required></label>
+          <label>Phone<span class="tel"><select name="country_code" aria-label="Country code" autocomplete="tel-country-code"><option value="+91" title="India" selected>IN +91</option><option value="+971" title="United Arab Emirates">AE +971</option><option value="+1" title="United States / Canada">US +1</option><option value="+44" title="United Kingdom">GB +44</option><option value="+65" title="Singapore">SG +65</option><option value="+966" title="Saudi Arabia">SA +966</option><option value="+974" title="Qatar">QA +974</option><option value="+880" title="Bangladesh">BD +880</option><option value="+977" title="Nepal">NP +977</option><option value="+94" title="Sri Lanka">LK +94</option><option value="+61" title="Australia">AU +61</option><option value="+49" title="Germany">DE +49</option><option value="+33" title="France">FR +33</option><option value="+31" title="Netherlands">NL +31</option><option value="+81" title="Japan">JP +81</option><option value="+852" title="Hong Kong">HK +852</option><option value="+60" title="Malaysia">MY +60</option></select><input name="phone" type="tel" autocomplete="tel-national" placeholder="98765 43210" aria-label="Phone number"></span></label>
           <label class="full">Message<textarea name="message" placeholder="Areas, timing, anything we should know"></textarea></label>
           <div class="full" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
             <button class="btn btn-ink" type="submit" data-magnet>Send <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
@@ -748,18 +748,24 @@ function ggInit(root){
   },roleT;
   function showRole(){
     var c=root.querySelector('input[name=role]:checked');if(!roleMsg||!c)return;
+    // taxi owners often have no email or company, so only name and phone are required for them
+    var own=c.value==='Taxi owner',fm=c.form;fm.classList.toggle('owner',own);fm.elements.email.required=!own;fm.elements.phone.required=own;
     var t=roleText[c.value];if(roleMsg.textContent===t)return;
     roleMsg.classList.add('swap');clearTimeout(roleT);
     roleT=setTimeout(function(){roleMsg.textContent=t;roleMsg.classList.remove('swap')},200);
   }
-  qa('input[name=role]').forEach(function(r){on(r,'change',showRole)});
+  qa('input[name=role]').forEach(function(r){on(r,'change',showRole)});showRole();
   cleanups.push(function(){clearTimeout(roleT)});
 
   // links that lead to the form preselect who the visitor is
   qa('[data-role]').forEach(function(a){on(a,'click',function(){var r=root.querySelector('input[name=role][value="'+a.getAttribute('data-role')+'"]');if(r){r.checked=true;showRole()}})});
 
   // nav: underline the link for the part of the page in view
-  var navLinks=qa('.nav ul a'),navIO=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var id=e.target.id;navLinks.forEach(function(a){var h=a.getAttribute('href').slice(1);a.classList.toggle('on',h===id&&(id!=='contact'||a.getAttribute('data-role')===(root.querySelector('input[name=role]:checked')||{}).value))})})},{rootMargin:'-40% 0px -55% 0px'});
+  // brand and owner cards sit side by side on wide screens, so the underline follows whichever was picked last (brands by default); a click also wins while its jump runs
+  var navLinks=qa('.nav ul a'),cardPick='brands',pickT=0,cB=root.querySelector('#brands'),cO=root.querySelector('#owners');
+  function navOn(id){if((id==='brands'||id==='owners')&&(Date.now()-pickT<1800||cB&&cO&&Math.abs(cB.getBoundingClientRect().top-cO.getBoundingClientRect().top)<2))id=cardPick;navLinks.forEach(function(a){var h=a.getAttribute('href').slice(1);a.classList.toggle('on',h===id&&(id!=='contact'||a.getAttribute('data-role')===(root.querySelector('input[name=role]:checked')||{}).value))})}
+  qa('a[href="#brands"], a[href="#owners"]').forEach(function(a){on(a,'click',function(){cardPick=a.getAttribute('href').slice(1);pickT=Date.now();navOn(cardPick)})});
+  var navIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)navOn(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
   ['how','brands','owners','investors','contact'].forEach(function(id){var el=root.querySelector('#'+id);if(el)navIO.observe(el)});
   cleanups.push(function(){navIO.disconnect()});
 
@@ -767,7 +773,8 @@ function ggInit(root){
   var form=q('[data-form]'),msg=q('[data-form-msg]');
   on(form,'submit',function(e){
     e.preventDefault();
-    if(!form.name.value||!form.email.value||!form.email.checkValidity()){msg.textContent='Please add your name and a valid email.';return}
+    if(form.classList.contains('owner')){if(!form.name.value||form.phone.value.replace(/\D/g,'').length<7){msg.textContent='Please add your name and phone number.';return}if(!form.email.checkValidity()){msg.textContent='Please check your email, or leave it empty.';return}}
+    else if(!form.name.value||!form.email.value||!form.email.checkValidity()){msg.textContent='Please add your name and a valid email.';return}
     var data=new FormData(form),ep=form.getAttribute('data-endpoint');
     var btn=form.querySelector('[type=submit]');
     function done(){form.reset();showRole();msg.textContent="Thank you! We'll get back to you within one working day."}
