@@ -42,12 +42,13 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
+        {"@type": "Question", "name": "Is GoGaze live yet?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. The first GoGaze screens go live in Kolkata with the pilot, and founding brands get the first slots."}},
         {"@type": "Question", "name": "What is taxi-top advertising?", "acceptedAnswer": {"@type": "Answer", "text": "Digital screens mounted on taxi roofs that show ads as the taxi drives through the city. GoGaze controls what plays remotely, so ads can change by area and time of day."}},
         {"@type": "Question", "name": "Can I show my ad only in certain parts of Kolkata?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times."}},
         {"@type": "Question", "name": "How quickly can I change my ad?", "acceptedAnswer": {"@type": "Answer", "text": "The same day. New creatives are pushed to the screens remotely, with no reprinting or reinstalling."}},
         {"@type": "Question", "name": "How do I know my ad actually ran?", "acceptedAnswer": {"@type": "Answer", "text": "Every play is logged with location and time, and you get a report of where and when your ad was shown."}},
-        {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pilot plans are a fixed monthly fee per taxi plus a performance-linked bonus. Contact GoGaze for current rates."}},
-        {"@type": "Question", "name": "I own a taxi. How do I join?", "acceptedAnswer": {"@type": "Answer", "text": "Register on the GoGaze website. GoGaze installs and maintains the screen at no cost to you and pays you every month."}}
+        {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pilot rates depend on your areas and hours. Book a demo and GoGaze will share them on a call."}},
+        {"@type": "Question", "name": "I own a taxi. How do I join?", "acceptedAnswer": {"@type": "Answer", "text": "Register on the GoGaze website. GoGaze installs and maintains the screen at no cost to you and pays you every month once it is live."}}
       ]
     }
   ]
@@ -93,7 +94,7 @@ body{margin:0;background:#0D0D0B}
 .gg .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
 .gg .nav ul a{text-decoration:none;font-size:15px;font-weight:500;position:relative}
 .gg .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
-.gg .nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.gg .nav ul a:hover::after,.gg .nav ul a.on::after{transform:scaleX(1);transform-origin:left}
 .gg .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:var(--body);transition:background .3s,color .3s,transform .4s var(--ease)}
 .gg .btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
 .gg .btn:hover svg{transform:translateX(4px) rotate(-45deg)}
@@ -279,6 +280,7 @@ body{margin:0;background:#0D0D0B}
 .gg .net canvas{width:100%;aspect-ratio:1/1;border-radius:24px;background:#121210;border:1px solid var(--line-d)}
 .gg .phases{margin-top:28px;display:grid;gap:0}
 .gg .phases div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:15px 0;border-top:1px solid var(--line-d)}
+.gg .inv-line{margin:28px 0 20px;font-size:19px;max-width:520px}
 .gg .phases b{font-weight:500}
 
 /* faq */
@@ -296,6 +298,10 @@ body{margin:0;background:#0D0D0B}
 
 /* cta */
 .gg .cta-sec{background:var(--taxi)}
+/* section sheets: each new colour slides up over the last with a soft shadow */
+.gg .sheet{position:relative;z-index:1;margin-top:-40px;box-shadow:0 -28px 60px -34px rgba(13,13,11,.45)}
+.gg .sheet:not(.dark):not(.cta-sec){background:var(--paper)}
+.gg .pre-sheet{padding-bottom:calc(clamp(48px,5vw,80px) + 40px)}
 .gg .cta-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px)}
 @media (max-width:900px){.gg .cta-grid{grid-template-columns:minmax(0,1fr)}}
 .gg form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -353,10 +359,10 @@ body{margin:0;background:#0D0D0B}
         <li><a href="#how">How it works</a></li>
         <li><a href="#brands">For brands</a></li>
         <li><a href="#owners">For taxi owners</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#investors">Investors</a></li>
       </ul>
     </nav>
-    <a class="btn btn-ink" href="#contact" data-magnet>Start a campaign <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <a class="btn btn-ink" href="#contact" data-role="Brand" data-magnet>Book a demo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
 </header>
 
@@ -372,7 +378,7 @@ body{margin:0;background:#0D0D0B}
       <div class="hero-sub fade-in">
         <p>GoGaze puts digital screens on taxi roofs. Choose what plays, on which street, at what hour, and change it from your phone.</p>
         <div class="cta">
-          <a class="btn btn-ink" href="#contact" data-magnet>Book a demo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn btn-ink" href="#contact" data-role="Brand" data-magnet>Book a demo <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a class="btn btn-ghost" href="#owners">I own a taxi</a>
         </div>
       </div>
@@ -482,17 +488,15 @@ body{margin:0;background:#0D0D0B}
     </div>
   </section>
 
-  <section class="sec dark">
+  <section class="sec dark city">
     <div class="wrap">
-      <div class="kicker mono"><span>(04) The difference</span><span class="muted">Hoarding vs. GoGaze</span></div>
-      <h2 data-reveal style="margin-bottom:40px">Outdoor ads,<br>finally flexible.</h2>
-      <div class="vs" data-vs>
-        <div class="h mono muted">Hoarding</div><div class="h mono" style="color:var(--cyan)">GoGaze</div>
-        <div class="c old"><s>Stays in one place</s></div><div class="c new">Moves across the city</div>
-        <div class="c old"><s>One ad for weeks</s></div><div class="c new">Changes by street and hour</div>
-        <div class="c old"><s>Reprint to update</s></div><div class="c new">Update from a dashboard</div>
-        <div class="c old"><s>No proof it ran</s></div><div class="c new">A log of every play</div>
-        <div class="c old"><s>Flex that ends up in landfill</s></div><div class="c new">Nothing printed</div>
+      <div class="kicker mono"><span>(04) Where</span><span class="muted">Pilot city</span></div>
+    </div>
+    <p class="big" data-fill aria-label="Kolkata" style="padding-left:var(--gut)">Kolkata</p>
+    <div class="wrap">
+      <div class="city-row">
+        <p style="margin:0;max-width:520px;font-size:20px">Our first fleet runs in Kolkata. Pilot slots for brands are open now.</p>
+        <div class="next mono"><span class="chip y">Kolkata · Now</span><span class="chip">Mumbai · Next</span><span class="chip">Bangalore · Next</span></div>
       </div>
     </div>
   </section>
@@ -504,26 +508,32 @@ body{margin:0;background:#0D0D0B}
         <article class="card brand" id="brands" data-reveal>
           <div><p class="mono" style="margin:0 0 20px">For brands</p><h3>Be seen<br>where it<br>counts.</h3></div>
           <ul><li><span>Target by neighbourhood</span><span>Geo</span></li><li><span>Schedule by hour</span><span>Time</span></li><li><span>Change creatives the same day</span><span>Remote</span></li><li><span>Report of every play</span><span>Proof</span></li></ul>
-          <a class="btn btn-ink" href="#contact" style="align-self:flex-start" data-magnet>Plan a campaign <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn btn-ink" href="#contact" style="align-self:flex-start" data-role="Brand" data-magnet>Plan a campaign <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </article>
         <article class="card owner dark" id="owners" data-reveal>
           <div><p class="mono" style="margin:0 0 20px;color:var(--cyan)">For taxi owners</p><h3>Earn from<br>your roof.</h3></div>
-          <ul><li><span>Screen installed at no cost</span><span>Free</span></li><li><span>We handle upkeep</span><span>Covered</span></li><li><span>Drive your usual routes</span><span>No change</span></li><li><span>Paid every month</span><span>Monthly</span></li></ul>
-          <a class="btn btn-taxi" href="#contact" style="align-self:flex-start" data-owner-link>Register your taxi <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <ul><li><span>Screen installed at no cost</span><span>Free</span></li><li><span>We handle upkeep</span><span>Covered</span></li><li><span>Drive your usual routes</span><span>No change</span></li><li><span>Monthly income once live</span><span>Monthly</span></li></ul>
+          <a class="btn btn-taxi" href="#contact" style="align-self:flex-start" data-role="Taxi owner">Register your taxi <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="sec dark city">
+  <section class="sec dark" id="investors">
     <div class="wrap">
-      <div class="kicker mono"><span>(06) Where</span><span class="muted">Pilot city</span></div>
-    </div>
-    <p class="big" data-fill aria-label="Kolkata" style="padding-left:var(--gut)">Kolkata</p>
-    <div class="wrap">
-      <div class="city-row">
-        <p style="margin:0;max-width:520px;font-size:20px">Our first fleet runs in Kolkata. Pilot slots for brands are open now.</p>
-        <div class="next mono"><span class="chip y">Kolkata · Now</span><span class="chip">Mumbai · Next</span><span class="chip">Bangalore · Next</span></div>
+      <div class="kicker mono"><span>(06) Investors</span><span class="muted">The network learns</span></div>
+      <div class="net">
+        <canvas data-dots aria-label="Animated grid of city data points lighting up" role="img"></canvas>
+        <div data-reveal>
+          <h2>Every ride<br>teaches the<br>network.</h2>
+          <div class="phases">
+            <div><span class="mono" style="color:var(--cyan)">Today</span><span><b>You set the rules.</b> <span class="muted">Areas, hours and creatives, with a log of every play.</span></span></div>
+            <div><span class="mono" style="color:var(--cyan)">Building</span><span><b>A map of what works.</b> <span class="muted">Plays and responses, street by street.</span></span></div>
+            <div><span class="mono" style="color:var(--taxi)">Next</span><span><b>AI picks the moment.</b> <span class="muted">The right ad, on the right street, at the right hour.</span></span></div>
+          </div>
+          <p class="inv-line">We're raising our first round to put screens on Kolkata's roads.</p>
+          <a class="btn btn-taxi" href="#contact" data-role="Investor" data-magnet>Talk to the founder <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
@@ -532,14 +542,15 @@ body{margin:0;background:#0D0D0B}
     <div class="wrap">
       <div class="kicker mono"><span>(07) FAQ</span><span class="muted">Straight answers</span></div>
       <div class="faq">
-        <h2 data-reveal>Good<br>questions.</h2>
+        <h2 data-reveal>Before<br>you ask.</h2>
         <div>
-          <details open><summary>What is taxi-top advertising?<i aria-hidden="true"></i></summary><p>Digital screens mounted on taxi roofs that show ads as the taxi drives through the city. GoGaze controls what plays remotely, so ads can change by area and time of day.</p></details>
+          <details open><summary>Is GoGaze live yet?<i aria-hidden="true"></i></summary><p>Not yet. Our first screens go live in Kolkata with the pilot, and founding brands get the first slots.</p></details>
+          <details><summary>What is taxi-top advertising?<i aria-hidden="true"></i></summary><p>Digital screens mounted on taxi roofs that show ads as the taxi drives through the city. GoGaze controls what plays remotely, so ads can change by area and time of day.</p></details>
           <details><summary>Can I show my ad only in certain parts of Kolkata?<i aria-hidden="true"></i></summary><p>Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times.</p></details>
           <details><summary>How quickly can I change my ad?<i aria-hidden="true"></i></summary><p>The same day. New creatives are pushed to the screens remotely, with no reprinting or reinstalling.</p></details>
           <details><summary>How do I know my ad actually ran?<i aria-hidden="true"></i></summary><p>Every play is logged with location and time, and you get a report of where and when your ad was shown.</p></details>
-          <details><summary>How much does it cost?<i aria-hidden="true"></i></summary><p>Pilot plans are a fixed monthly fee per taxi plus a performance-linked bonus. Contact us for current rates.</p></details>
-          <details><summary>I own a taxi. How do I join?<i aria-hidden="true"></i></summary><p>Register below. We install and maintain the screen at no cost to you and pay you every month.</p></details>
+          <details><summary>How much does it cost?<i aria-hidden="true"></i></summary><p>Pilot rates depend on your areas and hours. Book a demo and we will share them on a call.</p></details>
+          <details><summary>I own a taxi. How do I join?<i aria-hidden="true"></i></summary><p>Register below. We install and maintain the screen at no cost to you and pay you every month once it is live.</p></details>
         </div>
       </div>
     </div>
@@ -579,29 +590,13 @@ body{margin:0;background:#0D0D0B}
     </div>
   </section>
 
-  <section class="sec dark">
-    <div class="wrap">
-      <div class="kicker mono"><span>(09) What's next</span><span class="muted">The network learns</span></div>
-      <div class="net">
-        <canvas data-dots aria-label="Animated grid of city data points lighting up" role="img"></canvas>
-        <div data-reveal>
-          <h2>Every ride<br>teaches the<br>network.</h2>
-          <div class="phases">
-            <div><span class="mono" style="color:var(--cyan)">Today</span><span><b>You set the rules.</b> <span class="muted">Areas, hours and creatives, with a log of every play.</span></span></div>
-            <div><span class="mono" style="color:var(--cyan)">Building</span><span><b>A map of what works.</b> <span class="muted">Plays and responses, street by street.</span></span></div>
-            <div><span class="mono" style="color:var(--taxi)">Next</span><span><b>AI picks the moment.</b> <span class="muted">The right ad, on the right street, at the right hour.</span></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+  </main>
 
 <footer class="dark">
   <div class="wrap">
     <div class="foot-top">
-      <p style="margin:0;max-width:380px" class="muted">GoGaze is a Kolkata-based digital out-of-home advertising company running location-targeted ads on taxi-top screens.</p>
-      <ul class="mono"><li><a href="#how">How it works</a></li><li><a href="#brands">For brands</a></li><li><a href="#owners">For taxi owners</a></li><li><a href="#faq">FAQ</a></li></ul>
+      <p style="margin:0;max-width:380px" class="muted">GoGaze is a Kolkata-based digital out-of-home advertising company bringing location-targeted ads to taxi-top screens.</p>
+      <ul class="mono"><li><a href="#how">How it works</a></li><li><a href="#brands">For brands</a></li><li><a href="#owners">For taxi owners</a></li><li><a href="#investors">Investors</a></li><li><a href="#faq">FAQ</a></li></ul>
       <ul class="mono"><li><a href="mailto:sales@gogaze.in">Email</a></li><li><a href="https://www.linkedin.com/company/gogaze/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/go.gaze/" target="_blank" rel="noopener">Instagram</a></li></ul>
     </div>
     <div class="foot-logo"><span class="logo on-dark" aria-hidden="true"><svg viewBox="0 0 2136 408" aria-hidden="true"><use href="#gg-logo"/></svg></span></div>
@@ -624,14 +619,33 @@ function ggInit(root){
   if(root.__taxiSrc){qa('[data-taxi-src]').forEach(function(i){i.src=root.__taxiSrc});qa('source').forEach(function(s){s.remove()})}
 
   // nav hide/show
-  var nav=q('[data-nav]'),lastY=window.scrollY;
+  var nav=q('[data-nav]'),lastY=window.scrollY,jumping=0;
   on(window,'scroll',function(){
     var y=window.scrollY;
     nav.classList.toggle('solid',y>40);
-    nav.classList.toggle('hide',y>lastY&&y>300);
+    nav.classList.toggle('hide',!jumping&&y>lastY&&y>300);
     lastY=y;
   },{passive:true});
 
+  // in-page links: land with the section's header line just below the top bar
+  qa('a[href^="#"]').forEach(function(a){
+    var id=a.getAttribute('href').slice(1);if(!id||id.indexOf('gg-')===0)return;
+    on(a,'click',function(e){
+      var t=id==='top'?null:root.querySelector('#'+id),y=0;
+      if(id!=='top'&&!t)return;
+      e.preventDefault();
+      if(t){var sec=t.closest('section')||t;y=sec.getBoundingClientRect().top+window.scrollY+parseFloat(getComputedStyle(sec).paddingTop)-nav.offsetHeight-16}
+      clearTimeout(jumping);jumping=setTimeout(function(){jumping=0},1400);
+      nav.classList.remove('hide');
+      window.scrollTo({top:Math.max(0,y),behavior:reduce?'auto':'smooth'});
+      if(history.replaceState)history.replaceState(null,'','#'+id);
+    });
+  });
+  cleanups.push(function(){clearTimeout(jumping)});
+
+  // section sheets: each new colour overlaps the last; the section above gets room so nothing is covered
+  var prevBg=null,prevEl=null;
+  qa('.sec, footer').forEach(function(el){var bg=getComputedStyle(el).backgroundColor;if(bg==='rgba(0, 0, 0, 0)'||bg==='transparent')bg='paper';if(prevBg!==null&&bg!==prevBg){el.classList.add('sheet');prevEl.classList.add('pre-sheet')}prevBg=bg;prevEl=el});
   // reveal
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
   qa('[data-reveal],[data-vs]').forEach(function(el){io.observe(el)});
@@ -741,7 +755,13 @@ function ggInit(root){
   qa('input[name=role]').forEach(function(r){on(r,'change',showRole)});
   cleanups.push(function(){clearTimeout(roleT)});
 
-  qa('[data-owner-link]').forEach(function(a){on(a,'click',function(){var r=root.querySelector('input[name=role][value="Taxi owner"]');if(r){r.checked=true;showRole()}})});
+  // links that lead to the form preselect who the visitor is
+  qa('[data-role]').forEach(function(a){on(a,'click',function(){var r=root.querySelector('input[name=role][value="'+a.getAttribute('data-role')+'"]');if(r){r.checked=true;showRole()}})});
+
+  // nav: underline the link for the part of the page in view
+  var navLinks=qa('.nav ul a'),navIO=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var id=e.target.id;navLinks.forEach(function(a){var h=a.getAttribute('href').slice(1);a.classList.toggle('on',h===id&&(id!=='contact'||a.getAttribute('data-role')===(root.querySelector('input[name=role]:checked')||{}).value))})})},{rootMargin:'-40% 0px -55% 0px'});
+  ['how','brands','owners','investors','contact'].forEach(function(id){var el=root.querySelector('#'+id);if(el)navIO.observe(el)});
+  cleanups.push(function(){navIO.disconnect()});
 
   // form: posts to data-endpoint if set (e.g. Formspree), else opens an email
   var form=q('[data-form]'),msg=q('[data-form-msg]');
