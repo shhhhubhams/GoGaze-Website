@@ -157,11 +157,11 @@ body{margin:0;background:#0D0D0B}
 
 /* sections */
 .gg section{position:relative}
-.gg .sec{padding:clamp(64px,7vw,112px) 0}
+.gg .sec{padding:clamp(48px,5vw,80px) 0}
 .gg .dark{background:var(--ink);color:var(--paper)}
 .gg .dark .muted{color:var(--muted-d)}
 .gg .muted{color:var(--muted)}
-.gg .kicker{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:16px;margin-bottom:48px;font-size:15px}
+.gg .kicker{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:16px;margin-bottom:36px;font-size:15px}
 .gg .dark .kicker{border-color:var(--line-d)}
 .gg h2{font-family:var(--display);font-weight:760;font-variation-settings:"wdth" 80,"opsz" 96;font-size:clamp(44px,7vw,112px);line-height:.9;letter-spacing:-.03em;margin:0;text-transform:uppercase}
 .gg h3{font-family:var(--display);font-weight:650;font-variation-settings:"wdth" 90;font-size:clamp(24px,2.4vw,34px);line-height:1.05;letter-spacing:-.015em;margin:0}
@@ -207,14 +207,14 @@ body{margin:0;background:#0D0D0B}
 .gg .ov4 div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line-d)}
 .gg .ov4 div:last-child{border:0}
 .gg .ov4 b{color:var(--cyan);font-weight:500}
-.gg .steps .step{min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:18px;opacity:.28;transition:opacity .5s}
+.gg .steps .step{min-height:56vh;display:flex;flex-direction:column;justify-content:center;gap:18px;opacity:.28;transition:opacity .5s}
 .gg .steps .step.on{opacity:1}
 .gg .steps .num{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(80px,9vw,140px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--cyan)}
 .gg .steps p{margin:0;max-width:440px;font-size:18px}
 @media (max-width:860px){
   .gg .how-grid{grid-template-columns:minmax(0,1fr)}
   .gg .map-col{top:72px;height:46vh;z-index:2}
-  .gg .steps .step{min-height:64vh}
+  .gg .steps .step{min-height:54vh}
 }
 
 /* scheduler */
@@ -245,8 +245,8 @@ body{margin:0;background:#0D0D0B}
 
 /* versus */
 .gg .vs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-top:1px solid var(--line-d)}
-.gg .vs .h{padding:20px 0;border-bottom:1px solid var(--line-d)}
-.gg .vs .c{padding:26px 0;border-bottom:1px solid var(--line-d);font-family:var(--display);font-variation-settings:"wdth" 88;font-weight:600;font-size:clamp(20px,2.4vw,34px);line-height:1.1;letter-spacing:-.015em;padding-right:24px}
+.gg .vs .h{padding:14px 0;border-bottom:1px solid var(--line-d)}
+.gg .vs .c{padding:17px 0;border-bottom:1px solid var(--line-d);font-family:var(--display);font-variation-settings:"wdth" 88;font-weight:600;font-size:clamp(20px,2.4vw,34px);line-height:1.1;letter-spacing:-.015em;padding-right:24px}
 .gg .vs .old{color:#77736a;position:relative}
 .gg .vs .old s{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 55%/0 2px no-repeat;transition:background-size 1s var(--ease)}
 .gg .vs.in .old s{background-size:100% 2px}
@@ -256,13 +256,13 @@ body{margin:0;background:#0D0D0B}
 /* audience */
 .gg .aud{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media (max-width:860px){.gg .aud{grid-template-columns:minmax(0,1fr)}}
-.gg .card{border-radius:28px;padding:clamp(28px,4vw,52px);min-height:560px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:transform .6s var(--ease)}
+.gg .card{border-radius:28px;padding:clamp(28px,4vw,52px);min-height:470px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;transition:transform .6s var(--ease)}
 .gg .card:hover{transform:translateY(-6px)}
 .gg .card.brand{background:var(--taxi)}
 .gg .card.owner{background:var(--ink);color:var(--paper)}
 .gg .card h3{font-size:clamp(40px,5vw,76px);font-variation-settings:"wdth" 78;font-weight:780;text-transform:uppercase;line-height:.9;letter-spacing:-.03em}
 .gg .card ul{list-style:none;margin:0;padding:0}
-.gg .card li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(13,13,11,.2);font-size:18px}
+.gg .card li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid rgba(13,13,11,.2);font-size:18px}
 .gg .card.owner li{border-color:var(--line-d)}
 .gg .card li span:last-child{font-family:var(--mono);font-size:12px;opacity:.7;white-space:nowrap}
 
@@ -270,15 +270,15 @@ body{margin:0;background:#0D0D0B}
 .gg .city{overflow:hidden}
 .gg .big{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75,"opsz" 96;font-size:clamp(84px,21vw,360px);line-height:.8;letter-spacing:-.045em;text-transform:uppercase;margin:0;white-space:nowrap;
   background:linear-gradient(90deg,var(--taxi) 0 var(--fill,0%),transparent var(--fill,0%));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:1.5px rgba(243,240,232,.35)}
-.gg .city-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-top:40px;align-items:flex-end}
+.gg .city-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-top:28px;align-items:flex-end}
 .gg .next{display:flex;gap:10px;flex-wrap:wrap}
 
 /* network dots */
-.gg .net{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
-@media (max-width:900px){.gg .net{grid-template-columns:minmax(0,1fr)}}
+.gg .net{display:grid;grid-template-columns:minmax(0,.64fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+@media (max-width:900px){.gg .net{grid-template-columns:minmax(0,1fr)}.gg .net canvas{max-width:520px}}
 .gg .net canvas{width:100%;aspect-ratio:1/1;border-radius:24px;background:#121210;border:1px solid var(--line-d)}
-.gg .phases{margin-top:36px;display:grid;gap:0}
-.gg .phases div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:20px 0;border-top:1px solid var(--line-d)}
+.gg .phases{margin-top:28px;display:grid;gap:0}
+.gg .phases div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:15px 0;border-top:1px solid var(--line-d)}
 .gg .phases b{font-weight:500}
 
 /* faq */
@@ -286,13 +286,13 @@ body{margin:0;background:#0D0D0B}
 @media (max-width:900px){.gg .faq{grid-template-columns:minmax(0,1fr)}}
 .gg details{border-top:1px solid var(--line)}
 .gg details:last-child{border-bottom:1px solid var(--line)}
-.gg summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font-family:var(--display);font-variation-settings:"wdth" 90;font-weight:600;font-size:clamp(20px,2vw,28px);letter-spacing:-.01em;min-height:44px}
+.gg summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:20px 0;font-family:var(--display);font-variation-settings:"wdth" 90;font-weight:600;font-size:clamp(20px,2vw,28px);letter-spacing:-.01em;min-height:44px}
 .gg summary::-webkit-details-marker{display:none}
 .gg summary i{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink);position:relative;transition:transform .5s var(--ease),background .3s}
 .gg summary i::before,.gg summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
 .gg summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
 .gg details[open] summary i{transform:rotate(45deg);background:var(--taxi)}
-.gg details p{margin:0 0 28px;max-width:640px;color:var(--ink-2);font-size:18px}
+.gg details p{margin:0 0 20px;max-width:640px;color:var(--ink-2);font-size:18px}
 
 /* cta */
 .gg .cta-sec{background:var(--taxi)}
@@ -302,6 +302,10 @@ body{margin:0;background:#0D0D0B}
 @media (max-width:560px){.gg form{grid-template-columns:minmax(0,1fr)}}
 .gg form label{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500}
 .gg form .full{grid-column:1 / -1}
+.gg .tel{display:flex;gap:8px}
+.gg .tel select{flex:0 0 112px;width:112px;appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:26px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%230D0D0B' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:10px 6px}
+.gg .tel input{flex:1;min-width:0}
+.gg .tel select:focus{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%230D0D0B' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:10px 6px}
 .gg input,.gg select,.gg textarea{font:inherit;font-size:16px;color:var(--ink);background:rgba(255,255,255,.55);border:1.5px solid rgba(13,13,11,.35);border-radius:12px;min-height:52px;padding:12px 14px;transition:border-color .3s, background .3s}
 .gg textarea{min-height:110px;resize:vertical}
 .gg input:focus,.gg select:focus,.gg textarea:focus{border-color:var(--ink);background:#fff;outline:none}
@@ -312,14 +316,16 @@ body{margin:0;background:#0D0D0B}
 .gg .seg input:checked+span{background:var(--ink);color:var(--taxi)}
 .gg .seg input:focus-visible+span{outline:2px solid var(--ink);outline-offset:3px}
 .gg .note{font-size:14px;margin:0}
+.gg .role-msg{margin:14px 0 0;font-size:16px;line-height:1.45;max-width:520px;min-height:1.45em;transition:opacity .35s, transform .35s var(--ease)}
+.gg .role-msg.swap{opacity:0;transform:translateY(6px)}
 
 /* footer */
-.gg footer{padding:80px 0 32px}
+.gg footer{padding:56px 0 28px}
 .gg .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
 .gg .foot-top ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .gg .foot-top a{text-decoration:none}
 .gg .foot-top a:hover{color:var(--cyan)}
-.gg .foot-logo{margin-top:64px;display:flex;justify-content:center}
+.gg .foot-logo{margin-top:40px;display:flex;justify-content:center}
 .gg .foot-logo .logo{width:100%;font-size:inherit}
 .gg .foot-logo .logo svg{width:100%;height:auto}
 .gg .foot-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line-d);padding-top:20px;margin-top:24px}
@@ -408,7 +414,7 @@ body{margin:0;background:#0D0D0B}
     <div class="wrap">
       <div class="kicker mono"><span>(02) How it works</span><span class="muted">Live in four steps</span></div>
       <h2 data-reveal>From upload<br>to the street.</h2>
-      <div class="how-grid" style="margin-top:72px">
+      <div class="how-grid" style="margin-top:44px">
         <div class="map-col">
           <div class="map" data-map data-step="1" role="img" aria-label="Map of Kolkata showing a GoGaze taxi playing ads in selected areas">
             <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -479,7 +485,7 @@ body{margin:0;background:#0D0D0B}
   <section class="sec dark">
     <div class="wrap">
       <div class="kicker mono"><span>(04) The difference</span><span class="muted">Hoarding vs. GoGaze</span></div>
-      <h2 data-reveal style="margin-bottom:64px">Outdoor ads,<br>finally flexible.</h2>
+      <h2 data-reveal style="margin-bottom:40px">Outdoor ads,<br>finally flexible.</h2>
       <div class="vs" data-vs>
         <div class="h mono muted">Hoarding</div><div class="h mono" style="color:var(--cyan)">GoGaze</div>
         <div class="c old"><s>Stays in one place</s></div><div class="c new">Moves across the city</div>
@@ -522,26 +528,9 @@ body{margin:0;background:#0D0D0B}
     </div>
   </section>
 
-  <section class="sec dark" style="padding-top:0">
-    <div class="wrap">
-      <div class="kicker mono"><span>(07) What's next</span><span class="muted">The network learns</span></div>
-      <div class="net">
-        <canvas data-dots aria-label="Animated grid of city data points lighting up" role="img"></canvas>
-        <div data-reveal>
-          <h2>Every ride<br>teaches the<br>network.</h2>
-          <div class="phases">
-            <div><span class="mono" style="color:var(--cyan)">Today</span><span><b>You set the rules.</b> <span class="muted">Areas, hours and creatives, with a log of every play.</span></span></div>
-            <div><span class="mono" style="color:var(--cyan)">Building</span><span><b>A map of what works.</b> <span class="muted">Plays and responses, street by street.</span></span></div>
-            <div><span class="mono" style="color:var(--taxi)">Next</span><span><b>AI picks the moment.</b> <span class="muted">The right ad, on the right street, at the right hour.</span></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="sec" id="faq">
     <div class="wrap">
-      <div class="kicker mono"><span>(08) FAQ</span><span class="muted">Straight answers</span></div>
+      <div class="kicker mono"><span>(07) FAQ</span><span class="muted">Straight answers</span></div>
       <div class="faq">
         <h2 data-reveal>Good<br>questions.</h2>
         <div>
@@ -558,10 +547,10 @@ body{margin:0;background:#0D0D0B}
 
   <section class="sec cta-sec" id="contact">
     <div class="wrap">
-      <div class="kicker mono" style="border-color:rgba(13,13,11,.3)"><span>(09) Contact</span><span>Reply within one working day</span></div>
+      <div class="kicker mono" style="border-color:rgba(13,13,11,.3)"><span>(08) Contact</span><span>Reply within one working day</span></div>
       <div class="cta-grid">
         <div>
-          <h2>Let's put<br>you on<br>the road.</h2>
+          <h2>Let's get<br>your ad<br>moving.</h2>
           <p style="margin:32px 0 0;font-size:19px;max-width:440px">Tell us a little about you. Or write to <a href="mailto:sales@gogaze.in">sales@gogaze.in</a>.</p>
         </div>
         <form data-form data-endpoint="https://formsubmit.co/ajax/sales@gogaze.in" novalidate>
@@ -574,17 +563,35 @@ body{margin:0;background:#0D0D0B}
               <label><input type="radio" name="role" value="Taxi owner"><span>A taxi owner</span></label>
               <label><input type="radio" name="role" value="Investor"><span>An investor</span></label>
             </div>
+            <p class="role-msg" data-role-msg aria-live="polite">Your ad, moving through the city. Tell us where, we'll handle the rest.</p>
           </fieldset>
           <label>Name<input name="name" autocomplete="name" required></label>
           <label>Company<input name="company" autocomplete="organization"></label>
           <label>Email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="+91"></label>
+          <label>Phone<span class="tel"><select name="country_code" aria-label="Country code" autocomplete="tel-country-code"><option value="+91" title="India" selected>IN +91</option><option value="+971" title="United Arab Emirates"None>AE +971</option><option value="+1" title="United States / Canada"None>US +1</option><option value="+44" title="United Kingdom"None>GB +44</option><option value="+65" title="Singapore"None>SG +65</option><option value="+966" title="Saudi Arabia"None>SA +966</option><option value="+974" title="Qatar"None>QA +974</option><option value="+880" title="Bangladesh"None>BD +880</option><option value="+977" title="Nepal"None>NP +977</option><option value="+94" title="Sri Lanka"None>LK +94</option><option value="+61" title="Australia"None>AU +61</option><option value="+49" title="Germany"None>DE +49</option><option value="+33" title="France"None>FR +33</option><option value="+31" title="Netherlands"None>NL +31</option><option value="+81" title="Japan"None>JP +81</option><option value="+852" title="Hong Kong"None>HK +852</option><option value="+60" title="Malaysia"None>MY +60</option></select><input name="phone" type="tel" autocomplete="tel-national" placeholder="98765 43210" aria-label="Phone number"></span></label>
           <label class="full">Message<textarea name="message" placeholder="Areas, timing, anything we should know"></textarea></label>
           <div class="full" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
             <button class="btn btn-ink" type="submit" data-magnet>Send <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
             <p class="note" data-form-msg aria-live="polite"></p>
           </div>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark">
+    <div class="wrap">
+      <div class="kicker mono"><span>(09) What's next</span><span class="muted">The network learns</span></div>
+      <div class="net">
+        <canvas data-dots aria-label="Animated grid of city data points lighting up" role="img"></canvas>
+        <div data-reveal>
+          <h2>Every ride<br>teaches the<br>network.</h2>
+          <div class="phases">
+            <div><span class="mono" style="color:var(--cyan)">Today</span><span><b>You set the rules.</b> <span class="muted">Areas, hours and creatives, with a log of every play.</span></span></div>
+            <div><span class="mono" style="color:var(--cyan)">Building</span><span><b>A map of what works.</b> <span class="muted">Plays and responses, street by street.</span></span></div>
+            <div><span class="mono" style="color:var(--taxi)">Next</span><span><b>AI picks the moment.</b> <span class="muted">The right ad, on the right street, at the right hour.</span></span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -719,7 +726,22 @@ function ggInit(root){
   }
 
   // taxi owner link preselects role
-  qa('[data-owner-link]').forEach(function(a){on(a,'click',function(){var r=root.querySelector('input[name=role][value="Taxi owner"]');if(r)r.checked=true})});
+  // role picker: a short welcome line for each choice
+  var roleMsg=q('[data-role-msg]'),roleText={
+    'Brand':"Your ad, moving through the city. Tell us where, we'll handle the rest.",
+    'Taxi owner':"Your roof can pay you. Free screen, money every month.",
+    'Investor':"Kolkata today. Every Indian city next. Back us at the start."
+  },roleT;
+  function showRole(){
+    var c=root.querySelector('input[name=role]:checked');if(!roleMsg||!c)return;
+    var t=roleText[c.value];if(roleMsg.textContent===t)return;
+    roleMsg.classList.add('swap');clearTimeout(roleT);
+    roleT=setTimeout(function(){roleMsg.textContent=t;roleMsg.classList.remove('swap')},200);
+  }
+  qa('input[name=role]').forEach(function(r){on(r,'change',showRole)});
+  cleanups.push(function(){clearTimeout(roleT)});
+
+  qa('[data-owner-link]').forEach(function(a){on(a,'click',function(){var r=root.querySelector('input[name=role][value="Taxi owner"]');if(r){r.checked=true;showRole()}})});
 
   // form: posts to data-endpoint if set (e.g. Formspree), else opens an email
   var form=q('[data-form]'),msg=q('[data-form-msg]');
@@ -727,10 +749,15 @@ function ggInit(root){
     e.preventDefault();
     if(!form.name.value||!form.email.value||!form.email.checkValidity()){msg.textContent='Please add your name and a valid email.';return}
     var data=new FormData(form),ep=form.getAttribute('data-endpoint');
-    if(ep){fetch(ep,{method:'POST',body:data,headers:{Accept:'application/json'}}).then(function(r){msg.textContent=r.ok?'Thanks. We will be in touch soon.':'Something went wrong. Please email us.'}).catch(function(){msg.textContent='Something went wrong. Please email us.'});return}
+    var btn=form.querySelector('[type=submit]');
+    function done(){form.reset();showRole();msg.textContent="Thank you! We'll get back to you within one working day."}
+    if(ep){
+      btn.disabled=true;msg.textContent='Sending...';
+      fetch(ep,{method:'POST',body:data,headers:{Accept:'application/json'}}).then(function(r){if(r.ok)done();else msg.textContent='Something went wrong. Please email us.'}).catch(function(){msg.textContent='Something went wrong. Please email us.'}).then(function(){btn.disabled=false});
+      return}
     var body=[];data.forEach(function(v,k){body.push(k+': '+v)});
     window.location.href='mailto:sales@gogaze.in?subject='+encodeURIComponent('GoGaze enquiry ('+data.get('role')+')')+'&body='+encodeURIComponent(body.join('\n'));
-    msg.textContent='Opening your email app...';
+    form.reset();showRole();msg.textContent='Opening your email app...';
   });
 
   return function(){cleanups.forEach(function(f){f()})};
