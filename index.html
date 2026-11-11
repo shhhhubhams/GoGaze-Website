@@ -398,7 +398,7 @@ body{margin:0;background:#0D0D0B}
             </div>
           </div>
         </div>
-        <div class="hud tl mono"><span class="live" data-zone>Live · Park Street</span><span data-clock>19:42</span></div>
+        <div class="hud tl mono"><span class="live" data-zone>Preview · Park Street</span><span data-clock>19:42</span></div>
         <div class="hud tr mono"><span>Sample ads</span></div>
       </div>
     </div>
@@ -447,7 +447,7 @@ body{margin:0;background:#0D0D0B}
             </svg>
             <div class="ov ov1"><div class="art">Festive<br>sale</div><div class="mono" style="display:flex;justify-content:space-between;margin-top:10px"><span>creative.mp4</span><span>Uploading</span></div><div class="bar"><i></i></div></div>
             <div class="ov ov2 mono"><span class="chip y">Park Street</span><span class="chip y">Salt Lake</span><span class="chip">19:00 – 23:00</span></div>
-            <div class="ov ov3 mono"><span class="chip y">● Live now</span></div>
+            <div class="ov ov3 mono"><span class="chip y">● Preview</span></div>
             <div class="ov ov4 mono"><div><span>19:42 · Park Street</span><b>Played</b></div><div><span>19:51 · Park Street</span><b>Played</b></div><div><span>20:07 · Salt Lake</span><b>Played</b></div></div>
           </div>
         </div>
@@ -492,7 +492,7 @@ body{margin:0;background:#0D0D0B}
     <div class="wrap">
       <div class="city-row">
         <p style="margin:0;max-width:520px;font-size:20px">Our first fleet runs in Kolkata. Pilot slots for brands are open now.</p>
-        <div class="next mono"><span class="chip y">Kolkata · Now</span><span class="chip">Mumbai · Next</span><span class="chip">Bangalore · Next</span></div>
+        <div class="next mono"><span class="chip y">Kolkata · First</span><span class="chip">Mumbai · Next</span><span class="chip">Bangalore · Next</span></div>
       </div>
     </div>
   </section>
@@ -528,6 +528,7 @@ body{margin:0;background:#0D0D0B}
             <div><span class="mono" style="color:var(--taxi)">Next</span><span><b>AI picks the moment.</b> <span class="muted">The right ad, on the right street, at the right hour.</span></span></div>
           </div>
           <p class="inv-line">We're raising our first round to put screens on Kolkata's roads.</p>
+          <p class="muted" style="margin:-8px 0 24px;font-size:15px">Incubated at IIT Kharagpur Research Park.</p>
           <a class="btn btn-taxi" href="#contact" data-role="Investor" data-magnet>Talk to the founder <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
@@ -659,7 +660,7 @@ function ggInit(root){
 
   // roof screen ad rotation + HUD
   var ads=qa('.screen .ad'),zone=q('[data-zone]'),clock=q('[data-clock]');
-  var zones=['Live · Park Street','Live · Salt Lake','Live · Esplanade','Live · New Town'];
+  var zones=['Preview · Park Street','Preview · Salt Lake','Preview · Esplanade','Preview · New Town'];
   var times=['19:42','08:15','13:06','21:30'];
   var ai=0;
   every(function(){ads[ai].classList.remove('on');ai=(ai+1)%ads.length;ads[ai].classList.add('on');zone.textContent=zones[ai];clock.textContent=times[ai]},reduce?6000:3200);
