@@ -367,6 +367,13 @@ body{margin:0;background:#0D0D0B}
   .gg .tape .track{animation:none}
   html{scroll-behavior:auto}
 }
+/* experiment: soft city-light glows with film grain on the dark sections */
+.gg #how{background-image:radial-gradient(55% 45% at 90% 8%,rgba(0,194,243,.13),transparent 70%)}
+.gg .city{background-image:radial-gradient(60% 90% at 88% 0%,rgba(255,194,26,.17),transparent 70%),radial-gradient(55% 80% at 0% 100%,rgba(0,110,148,.32),transparent 70%)}
+.gg #investors{background-image:radial-gradient(50% 60% at 10% 15%,rgba(0,110,148,.30),transparent 70%),radial-gradient(45% 55% at 95% 95%,rgba(255,194,26,.12),transparent 70%)}
+.gg footer{position:relative;background-image:radial-gradient(70% 90% at 50% 120%,rgba(0,194,243,.14),transparent 70%)}
+.gg #how,.gg .city,.gg #investors,.gg footer{isolation:isolate}
+.gg #how::after,.gg .city::after,.gg #investors::after,.gg footer::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");mix-blend-mode:soft-light;opacity:.9}
 </style>
 </head>
 <body>
