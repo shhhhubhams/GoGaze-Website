@@ -370,6 +370,48 @@ body{margin:0;background:#0D0D0B}
 /* experiment: paper texture on the cream sections */
 .gg,.gg .sheet:not(.dark):not(.cta-sec){background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .05 0 0 0 0 .05 0 0 0 0 .04 0 0 0 .10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .36 0 0 0 0 .3 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E")}
 .gg .cta-sec,.gg .card.brand,.gg .tape{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .05 0 0 0 0 .05 0 0 0 0 .04 0 0 0 .10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- phones and small tablets only (laptops unchanged) ---------- */
+.gg .menu-btn,.gg .msheet{display:none}
+@media (max-width:860px){
+  .gg{-webkit-tap-highlight-color:transparent}
+  /* menu */
+  .gg .nav .wrap{gap:4px}
+  .gg .nav nav{margin-left:auto}
+  .gg .menu-btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;margin-right:-14px;border:0;background:none;color:inherit;font:500 15px/1 var(--body);cursor:pointer}
+  .gg .menu-btn i{position:relative;width:18px;height:10px;display:inline-block}
+  .gg .menu-btn i::before,.gg .menu-btn i::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;border-radius:2px;transition:transform .45s var(--ease),top .45s var(--ease)}
+  .gg .menu-btn i::before{top:0}.gg .menu-btn i::after{top:8.5px}
+  .gg .menu-btn[aria-expanded="true"] i::before{top:4.25px;transform:rotate(45deg)}
+  .gg .menu-btn[aria-expanded="true"] i::after{top:4.25px;transform:rotate(-45deg)}
+  .gg .msheet{display:block;position:absolute;left:0;right:0;top:100%;background:rgba(243,240,232,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 24px 40px -28px rgba(13,13,11,.45);padding:4px var(--gut) 20px;
+    opacity:0;visibility:hidden;transform:translateY(-10px);transform-origin:top;transition:opacity .3s,transform .45s var(--ease),visibility 0s .45s}
+  .gg .msheet.open{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .45s var(--ease),visibility 0s}
+  .gg .msheet a{display:flex;justify-content:space-between;align-items:center;min-height:58px;border-top:1px solid var(--line);text-decoration:none;font-family:var(--display);font-weight:650;font-variation-settings:"wdth" 90;font-size:24px;letter-spacing:-.01em;
+    opacity:0;transform:translateY(8px);transition:opacity .3s,transform .45s var(--ease)}
+  .gg .msheet a:first-child{border-top:0}
+  .gg .msheet a::after{content:"";width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);margin-right:4px}
+  .gg .msheet.open a{opacity:1;transform:none}
+  .gg .msheet.open a:nth-child(2){transition-delay:.04s}.gg .msheet.open a:nth-child(3){transition-delay:.08s}.gg .msheet.open a:nth-child(4){transition-delay:.12s}.gg .msheet.open a:nth-child(5){transition-delay:.16s}.gg .msheet.open a:nth-child(6){transition-delay:.2s}
+  .gg .nav.menu-open{background:rgba(243,240,232,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  /* How it works: the sticky map gets a solid backdrop so step text slides cleanly underneath */
+  .gg .map-col{top:0;height:calc(46svh + 20px);padding:12px 0 8px;background:var(--ink);box-shadow:0 18px 22px -6px var(--ink)}
+  .gg .steps .step{min-height:34svh}
+  /* screen-height sizes that don't jump when Safari's address bar moves */
+  .gg .stage{max-height:92svh}
+  /* readable chips */
+  .gg .hud span{font-size:12px}
+}
+/* touch screens: no hover effects left "stuck" after a tap */
+@media (hover:none){
+  .gg .card:hover{transform:none}
+  .gg .btn:hover svg{transform:none}
+  .gg .btn-ink:hover{background:var(--ink)}
+  .gg .btn-taxi:hover{background:var(--taxi)}
+  .gg .nav ul a:not(.on):hover::after{transform:scaleX(0)}
+  .gg .foot-top a:hover{color:inherit}
+}
+@media (prefers-reduced-motion:reduce){.gg .msheet,.gg .msheet a,.gg .menu-btn i::before,.gg .menu-btn i::after{transition:none}}
 </style>
 </head>
 <body>
@@ -389,6 +431,15 @@ body{margin:0;background:#0D0D0B}
         <li><a href="#contact">Contact us</a></li>
       </ul>
     </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="gg-menu" data-menu-btn><i aria-hidden="true"></i><span class="sr">Open menu</span></button>
+  </div>
+  <div class="msheet" id="gg-menu" data-menu aria-label="Menu" inert>
+    <a href="#how">How it works</a>
+    <a href="#brands" data-role="Brand">For brands</a>
+    <a href="#owners" data-role="Taxi owner">For taxi owners</a>
+    <a href="#investors">Investors</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact us</a>
   </div>
 </header>
 
@@ -650,9 +701,25 @@ function ggInit(root){
   on(window,'scroll',function(){
     var y=window.scrollY;
     nav.classList.toggle('solid',y>40);
-    nav.classList.toggle('hide',!jumping&&y>lastY&&y>300&&!nav.contains(document.activeElement));
+    nav.classList.toggle('hide',!jumping&&y>lastY&&y>300&&!nav.contains(document.activeElement)&&!nav.classList.contains('menu-open'));
     lastY=y;
   },{passive:true});
+
+  // phone menu: opens a short list of the sections; closes on a pick, Escape, a tap outside, or a wider screen
+  var mbtn=q('[data-menu-btn]'),msheet=q('[data-menu]');
+  function setMenu(open){
+    if(!mbtn)return;
+    nav.classList.toggle('menu-open',open);msheet.classList.toggle('open',open);
+    mbtn.setAttribute('aria-expanded',open?'true':'false');mbtn.querySelector('.sr').textContent=open?'Close menu':'Open menu';
+    if(open){msheet.removeAttribute('inert');nav.classList.remove('hide')}else{msheet.setAttribute('inert','')}
+  }
+  if(mbtn){
+    on(mbtn,'click',function(){setMenu(!msheet.classList.contains('open'))});
+    qa('[data-menu] a').forEach(function(a){on(a,'click',function(){setMenu(false)})});
+    on(document,'keydown',function(e){if(e.key==='Escape'&&msheet.classList.contains('open')){setMenu(false);mbtn.focus()}});
+    on(document,'click',function(e){if(msheet.classList.contains('open')&&!nav.contains(e.target))setMenu(false)});
+    on(window,'resize',function(){if(window.innerWidth>860)setMenu(false)});
+  }
 
   // in-page links: a calm glide (slow in, slow out) that lands with the section's header line just below the top bar.
   // Longer trips take a little longer; any wheel, touch or key press stops it, so it never fights the visitor.
