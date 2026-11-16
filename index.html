@@ -367,6 +367,13 @@ body{margin:0;background:#0D0D0B}
   .gg .tape .track{animation:none}
   html{scroll-behavior:auto}
 }
+/* experiment: LED-style square-dot grid on the dark investor section and footer */
+.gg #investors,.gg footer{isolation:isolate}
+.gg #investors::before,.gg footer::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Crect x='6' y='6' width='2.2' height='2.2' fill='%23F3F0E8'/%3E%3C/svg%3E");
+  opacity:.16;-webkit-mask-image:radial-gradient(90% 80% at 75% 35%,#000 20%,transparent 80%);mask-image:radial-gradient(90% 80% at 75% 35%,#000 20%,transparent 80%)}
+.gg footer{position:relative}
+.gg footer::before{opacity:.12;-webkit-mask-image:linear-gradient(transparent,#000 70%);mask-image:linear-gradient(transparent,#000 70%)}
 </style>
 </head>
 <body>
