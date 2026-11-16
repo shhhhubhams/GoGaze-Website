@@ -71,7 +71,7 @@
   -webkit-font-smoothing:antialiased; overflow-x:clip;
 }
 .gg *,.gg *::before,.gg *::after{box-sizing:border-box}
-html{scroll-behavior:smooth;background:linear-gradient(#F3F0E8 0 50%,#0D0D0B 50% 100%)}
+html{background:linear-gradient(#F3F0E8 0 50%,#0D0D0B 50% 100%)}
 body{margin:0;background:#0D0D0B}
 .gg img{display:block;max-width:100%}
 .gg a{color:inherit}
@@ -651,7 +651,23 @@ function ggInit(root){
     lastY=y;
   },{passive:true});
 
-  // in-page links: land with the section's header line just below the top bar
+  // in-page links: a calm glide (slow in, slow out) that lands with the section's header line just below the top bar.
+  // Longer trips take a little longer; any wheel, touch or key press stops it, so it never fights the visitor.
+  var glideRaf=0;
+  function stopGlide(){if(glideRaf){cancelAnimationFrame(glideRaf);glideRaf=0}}
+  function easeInOut(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function glide(to){
+    stopGlide();
+    var max=document.documentElement.scrollHeight-window.innerHeight;to=Math.max(0,Math.min(max,to));
+    var from=window.scrollY,dist=to-from;
+    if(reduce||Math.abs(dist)<2){window.scrollTo({top:to,behavior:'instant'});return 0}
+    var dur=Math.round(Math.min(1500,Math.max(700,Math.abs(dist)*.32))),t0=performance.now();
+    function step(now){var t=Math.min(1,(now-t0)/dur);window.scrollTo({top:from+dist*easeInOut(t),behavior:'instant'});glideRaf=t<1?requestAnimationFrame(step):0}
+    glideRaf=requestAnimationFrame(step);
+    return dur;
+  }
+  ['wheel','touchstart','keydown'].forEach(function(ev){on(window,ev,stopGlide,{passive:true})});
+  cleanups.push(stopGlide);
   qa('a[href^="#"]').forEach(function(a){
     var id=a.getAttribute('href').slice(1);if(!id||id.indexOf('gg-')===0)return;
     on(a,'click',function(e){
@@ -659,9 +675,9 @@ function ggInit(root){
       if(id!=='top'&&!t)return;
       e.preventDefault();
       if(t){var sec=t.closest('section')||t;y=sec.getBoundingClientRect().top+window.scrollY+parseFloat(getComputedStyle(sec).paddingTop)-nav.offsetHeight-16}
-      clearTimeout(jumping);jumping=setTimeout(function(){jumping=0},1400);
       nav.classList.remove('hide');
-      window.scrollTo({top:Math.max(0,y),behavior:reduce?'auto':'smooth'});
+      var dur=glide(y);
+      clearTimeout(jumping);jumping=setTimeout(function(){jumping=0},dur+400);
       if(history.replaceState)history.replaceState(null,'','#'+id);
     });
   });
