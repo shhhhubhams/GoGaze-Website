@@ -412,6 +412,23 @@ body{margin:0;background:#0D0D0B}
   .gg .foot-top a:hover{color:inherit}
 }
 @media (prefers-reduced-motion:reduce){.gg .msheet,.gg .msheet a,.gg .menu-btn i::before,.gg .menu-btn i::after{transition:none}}
+
+/* ---------- phones: thumb-reach campaign button, tap feedback, wider footer taps ---------- */
+.gg .mcta{display:none}
+@media (max-width:860px){
+  .gg .mcta{display:flex;justify-content:center;position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:40;min-height:54px;font-size:16px;
+    box-shadow:0 14px 34px -12px rgba(13,13,11,.55);transform:translateY(160%);opacity:0;pointer-events:none;
+    transition:transform .55s var(--ease),opacity .3s,background .3s}
+  .gg .mcta.show{transform:none;opacity:1;pointer-events:auto}
+  .gg .mcta:active{transform:scale(.97);transition-duration:.12s}
+  .gg .foot-top ul a{padding-right:28px}
+}
+@media (hover:none){
+  .gg .seg span,.gg .msheet a,.gg summary{transition-property:opacity,transform,background,color;transition-duration:.25s}
+  .gg .seg span:active{transform:scale(.95);transition-duration:.1s}
+  .gg summary:active,.gg .msheet a:active{opacity:.55;transition-duration:.1s}
+}
+@media (prefers-reduced-motion:reduce){.gg .mcta{transition:opacity .2s}}
 </style>
 </head>
 <body>
@@ -680,6 +697,7 @@ body{margin:0;background:#0D0D0B}
     <div class="foot-bot mono muted"><span>© 2026 GoGaze · Kolkata, India</span><a href="#top">Back to top</a></div>
   </div>
 </footer>
+<a class="btn btn-taxi mcta" href="#contact" data-role="Brand" data-mcta>Start your campaign <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
 
 </div>
 <!--BODY-END-->
@@ -719,6 +737,18 @@ function ggInit(root){
     on(document,'keydown',function(e){if(e.key==='Escape'&&msheet.classList.contains('open')){setMenu(false);mbtn.focus()}});
     on(document,'click',function(e){if(msheet.classList.contains('open')&&!nav.contains(e.target))setMenu(false)});
     on(window,'resize',function(){if(window.innerWidth>860)setMenu(false)});
+  }
+
+  // phones: a campaign button within thumb reach, only when it helps
+  var mcta=q('[data-mcta]');
+  if(mcta&&window.IntersectionObserver){
+    var seen={hero:true,contact:false,foot:false};
+    function mctaUpdate(){var show=!seen.hero&&!seen.contact&&!seen.foot&&!nav.classList.contains('menu-open');mcta.classList.toggle('show',show);mcta.setAttribute('aria-hidden',show?'false':'true');mcta.tabIndex=show?0:-1}
+    var mio=new IntersectionObserver(function(es){es.forEach(function(e){seen[e.target.getAttribute('data-mcta-zone')]=e.isIntersecting});mctaUpdate()},{threshold:0});
+    [['.hero','hero'],['#contact','contact'],['footer','foot']].forEach(function(z){var el=root.querySelector(z[0]);if(el){el.setAttribute('data-mcta-zone',z[1]);mio.observe(el)}});
+    cleanups.push(function(){mio.disconnect()});
+    if(window.MutationObserver){var mo=new MutationObserver(mctaUpdate);mo.observe(nav,{attributes:true,attributeFilter:['class']});cleanups.push(function(){mo.disconnect()})}
+    mctaUpdate();
   }
 
   // in-page links: a calm glide (slow in, slow out) that lands with the section's header line just below the top bar.
