@@ -237,10 +237,22 @@ body{margin:0;background:#0D0D0B}
 .gg .roof .slide{position:absolute;inset:0;padding:clamp(18px,3vw,36px);display:flex;flex-direction:column;justify-content:space-between;opacity:0;clip-path:inset(100% 0 0 0);transition:opacity 0s .6s,clip-path 0s .6s}
 .gg .roof .slide.on{opacity:1;clip-path:inset(0 0 0 0);z-index:1;transition:clip-path .6s var(--ease)}
 .gg .roof .slide b{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 76;font-size:clamp(30px,4.4vw,64px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em}
+.gg .roof .sl-top{display:flex;justify-content:space-between;gap:12px;opacity:.78}
+.gg .roof .sl-sub{display:block;margin-top:clamp(8px,1vw,14px);font-size:clamp(13px,1.15vw,17px);font-weight:500;letter-spacing:0;text-transform:none;opacity:.86}
+.gg .roof .slide i{font-style:normal}
 .gg .roof .s1{background:#F3F0E8;color:var(--ink)}
-.gg .roof .s2{background:var(--taxi);color:var(--ink)}
+.gg .roof .s1::after{content:"";position:absolute;right:8%;bottom:16%;width:15%;aspect-ratio:1;border-radius:50%;background:var(--taxi)}
+.gg .roof .s2{background:#0D0D0B;color:#F3F0E8}
+.gg .roof .s2 i{color:var(--taxi)}
 .gg .roof .s3{background:var(--cyan-ink);color:#fff}
-.gg .roof .s4{background:#0D0D0B;color:var(--taxi)}
+.gg .roof .s4{background:var(--taxi);color:var(--ink)}
+.gg .roof .s5{background:#C4572F;color:#FBF4EA}
+.gg .roof .s6{background:#F3F0E8;color:var(--ink)}
+.gg .roof .s6 i{color:var(--cyan-ink)}
+.gg .roof .s7{background:#23463A;color:#F3F0E8}
+.gg .roof .s8{background:#0D0D0B;color:var(--taxi)}
+.gg .roof .s9{background:#101417;color:#F3F0E8}
+.gg .roof .s9 i{color:var(--cyan)}
 .gg .roof .rack{display:flex;justify-content:space-between;padding:0 14%;margin-top:-2px}
 .gg .roof .rack i{width:18%;height:16px;background:var(--taxi);border-radius:0 0 6px 6px}
 .gg .clock{font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 75;font-size:clamp(72px,10vw,150px);line-height:.85;letter-spacing:-.03em}
@@ -479,19 +491,24 @@ body{margin:0;background:#0D0D0B}
       <div class="sched">
         <div data-reveal>
           <h2 id="gg-sched">One roof.<br>A new ad<br>every hour.</h2>
-          <div class="clock" style="margin-top:40px" data-sched-clock aria-live="polite">19:00</div>
+          <div class="clock" style="margin-top:40px" data-sched-clock aria-live="polite">20:00</div>
           <div class="where mono" data-sched-where><span>Park Street</span><span>Diners</span></div>
           <label class="sr" for="gg-hour">Time of day</label>
-          <input class="range" id="gg-hour" type="range" min="6" max="23" step="1" value="19" data-sched-range>
+          <input class="range" id="gg-hour" type="range" min="6" max="23" step="1" value="20" data-sched-range>
           <div class="ticks mono"><span>06:00</span><span>12:00</span><span>18:00</span><span>23:00</span></div>
         </div>
         <div class="roof" data-reveal aria-hidden="true">
           <div class="unit">
             <div class="disp">
-              <div class="slide s1"><span class="mono">Sample ad · Sector V</span><b>Coffee + toast<br>before 10.</b></div>
-              <div class="slide s2"><span class="mono">Sample ad · Gariahat</span><b>Festive sale<br>ends Sunday.</b></div>
-              <div class="slide s3"><span class="mono">Sample ad · Esplanade</span><b>Admissions open.<br>Visit today.</b></div>
-              <div class="slide s4"><span class="mono">Sample ad · Park Street</span><b>Table for two?<br>Book in one tap.</b></div>
+              <div class="slide s1"><span class="mono sl-top"><span>Sample ad · Salt Lake</span><span>06–08</span></span><div><b>Fresh chai.<br>Ready by six.</b><span class="sl-sub">Two minutes from the next signal.</span></div></div>
+              <div class="slide s2"><span class="mono sl-top"><span>Sample ad · Sector V</span><span>08–10</span></span><div><b>Coffee <i>+</i> toast<br>before 10.</b><span class="sl-sub">Order ahead, skip the queue.</span></div></div>
+              <div class="slide s3"><span class="mono sl-top"><span>Sample ad · Esplanade</span><span>10–12</span></span><div><b>Admissions open.<br>Visit today.</b><span class="sl-sub">Campus tours every hour.</span></div></div>
+              <div class="slide s4"><span class="mono sl-top"><span>Sample ad · Camac Street</span><span>12–14</span></span><div><b>Lunch in<br>fifteen minutes.</b><span class="sl-sub">Delivered to your office desk.</span></div></div>
+              <div class="slide s5"><span class="mono sl-top"><span>Sample ad · Gariahat</span><span>14–16</span></span><div><b>New season.<br>New colours.</b><span class="sl-sub">Now in store.</span></div></div>
+              <div class="slide s6"><span class="mono sl-top"><span>Sample ad · New Town</span><span>16–18</span></span><div><b>Festive sale<br>ends <i>Sunday.</i></b><span class="sl-sub">Last three days.</span></div></div>
+              <div class="slide s7"><span class="mono sl-top"><span>Sample ad · Ballygunge</span><span>18–20</span></span><div><b>Clinic open<br>till 9 pm.</b><span class="sl-sub">Walk in, no appointment needed.</span></div></div>
+              <div class="slide s8"><span class="mono sl-top"><span>Sample ad · Park Street</span><span>20–22</span></span><div><b>Table for two?<br>Book in one tap.</b><span class="sl-sub">Tonight on Park Street.</span></div></div>
+              <div class="slide s9"><span class="mono sl-top"><span>Sample ad · Howrah</span><span>22–00</span></span><div><b>Late train?<br>Your ride is <i>outside.</i></b><span class="sl-sub">Waiting at the station exit.</span></div></div>
             </div>
           </div>
           <div class="rack"><i></i><i></i></div>
@@ -710,7 +727,7 @@ function ggInit(root){
 
   // scheduler
   var range=q('[data-sched-range]'),sclock=q('[data-sched-clock]'),where=q('[data-sched-where]'),slides=qa('.roof .slide');
-  var plan=[[6,10,0,['Salt Lake Sector V','Office crowd']],[10,16,1,['Gariahat','Shoppers']],[16,20,2,['Esplanade','Commuters']],[20,24,3,['Park Street','Diners']]];
+  var plan=[[6,8,0,['Salt Lake','Early walkers']],[8,10,1,['Sector V','Office crowd']],[10,12,2,['Esplanade','Students']],[12,14,3,['Camac Street','Lunch break']],[14,16,4,['Gariahat','Shoppers']],[16,18,5,['New Town','Commuters']],[18,20,6,['Ballygunge','Families']],[20,22,7,['Park Street','Diners']],[22,24,8,['Howrah','Late travellers']]];
   function setHour(h){
     h=+h;var m=plan.filter(function(x){return h>=x[0]&&h<x[1]})[0];
     sclock.textContent=(h<10?'0':'')+h+':00';
