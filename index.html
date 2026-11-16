@@ -367,6 +367,12 @@ body{margin:0;background:#0D0D0B}
   .gg .tape .track{animation:none}
   html{scroll-behavior:auto}
 }
+/* experiment: topographic contour lines behind the dark map sections */
+.gg #how,.gg .city{isolation:isolate}
+.gg #how::before,.gg .city::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:url(/contours.svg) center/cover no-repeat;opacity:.11;
+  -webkit-mask-image:radial-gradient(120% 90% at 70% 40%,#000 30%,transparent 85%);mask-image:radial-gradient(120% 90% at 70% 40%,#000 30%,transparent 85%)}
+.gg .city::before{opacity:.13;background-position:30% 60%}
 </style>
 </head>
 <body>
