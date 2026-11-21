@@ -17,9 +17,9 @@ Hoardings stand still. Your customers don't. GoGaze puts digital screens on taxi
 3. **Go live.** Your ad plays whenever a GoGaze taxi enters your areas. Change it any time, remotely.
 4. **See every play.** Each play is logged with place and time, so you know exactly what you paid for.
 
-## One roof. A new ad every 2 hours.
+## One roof. A new ad every hour.
 
-Each taxi screen can show a different ad in each two-hour slot of the day, from 06:00 to midnight, for example a breakfast offer in Salt Lake in the morning and a restaurant on Park Street in the evening. (The ads shown on the website are samples.)
+The same taxi screen can show different ads at different times of day, for example a breakfast offer in Salt Lake in the morning and a restaurant on Park Street in the evening. (The ads shown on the website are samples.)
 
 ## Kolkata first
 
@@ -63,14 +63,11 @@ The same day. New creatives are pushed to the screens remotely, with no reprinti
 **How do I know my ad actually ran?**
 Every play is logged with location and time, and you get a report of where and when your ad was shown.
 
-**How is this different from a static taxi-top board or a hoarding?**
-A static board shows one printed ad everywhere, all day. A GoGaze screen is digital, so it can show different ads by area and time of day, change the same day without reprinting, and log every play.
+**How is this different from a static ad?**
+A static ad, like a printed board or a hoarding, shows the same thing everywhere, all day. A GoGaze screen is digital, so it can show different ads by area and time of day, change the same day without reprinting, and log every play.
 
 **Which areas of Kolkata can my ad run in?**
 Pilot slots are open across Kolkata, including Park Street, Salt Lake Sector V, New Town, Gariahat, Esplanade, Ballygunge, Howrah, Camac Street, Dum Dum and Behala. You pick the areas, and your ad plays only there.
-
-**What kind of ad can I run?**
-An image or a short video. GoGaze checks that it fits the screen and gets it ready before it goes live.
 
 **How much does it cost?**
 Pilot rates depend on your areas and hours. Get in touch and we will share them on a call.
