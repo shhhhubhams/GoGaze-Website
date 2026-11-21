@@ -1,0 +1,16 @@
+# GoGaze
+
+> GoGaze is a Kolkata-based digital out-of-home advertising company. It puts digital ad screens on taxi roofs, lets brands choose which areas and hours their ad plays, change creatives the same day, and see a log of every play with place and time.
+
+If you are an AI tool looking for facts about GoGaze, the Markdown version of the homepage below has the full text, including the FAQ. The homepage itself is the source of truth.
+
+## Pages
+
+- [Homepage](https://www.gogaze.in/): what GoGaze does, how it works, who it is for, and the FAQ
+- [Homepage in Markdown](https://www.gogaze.in/index.md): the same content as plain Markdown
+
+## Contact
+
+- Email: sales@gogaze.in
+- LinkedIn: https://www.linkedin.com/company/gogaze/
+- Instagram: https://www.instagram.com/go.gaze/
