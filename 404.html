@@ -24,29 +24,22 @@
   .logo svg{display:block;height:.74em;width:auto;fill:currentColor;overflow:visible}
   main{flex:1;display:flex;align-items:center;padding:clamp(24px,6vh,72px) 0}
   .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,6vw,96px);align-items:center}
-  h1{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(64px,10vw,150px);line-height:.86;letter-spacing:-.025em;text-transform:uppercase;margin:0 0 28px}
-  .lead{max-width:30ch;margin:0 0 32px;font-size:clamp(18px,1.5vw,21px);color:var(--ink-2)}
+  h1{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(64px,10vw,150px);line-height:.86;letter-spacing:-.025em;text-transform:uppercase;margin:0 0 36px}
   .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:16px;transition:transform .2s var(--ease)}
   .btn:active{transform:scale(.97)}
   .btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
   @media (hover:hover){.btn:hover svg{transform:translateX(4px)}}
-  .more{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:0 22px;font-size:16px}
-  .more a{color:var(--ink);text-underline-offset:4px;text-decoration-thickness:1px;display:inline-block;padding:10px 0}
-  .more a:hover{color:var(--cyan-ink)}
   a:focus-visible{outline:2px solid var(--cyan-ink);outline-offset:3px;border-radius:4px}
   /* the taxi-roof screen: the one loud thing on the page */
   .roof{padding-top:8px}
   .unit{border-radius:18px;padding:12px;background:linear-gradient(#1c1c19,#0d0d0b);box-shadow:0 40px 80px -30px rgba(13,13,11,.5)}
-  .disp{position:relative;aspect-ratio:2/1;border-radius:8px;overflow:hidden;background:var(--taxi);color:var(--ink);padding:clamp(16px,3vw,32px);display:flex;flex-direction:column;justify-content:space-between}
-  .disp .top{display:flex;justify-content:space-between;gap:12px;font:500 clamp(11px,1vw,13px)/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+  .disp{position:relative;aspect-ratio:2/1;border-radius:8px;overflow:hidden;background:var(--taxi);color:var(--ink);padding:clamp(16px,3vw,32px);display:flex;flex-direction:column;justify-content:center;align-items:center}
   .disp .num{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(96px,14vw,220px);line-height:.78;letter-spacing:-.04em;margin:0 0 10px}
-  .disp .sub{font-weight:500;font-size:clamp(15px,1.4vw,19px);margin:0}
   .rack{display:flex;justify-content:space-between;padding:0 14%;margin-top:-2px}
   .rack i{width:18%;height:16px;background:var(--taxi);border-radius:0 0 6px 6px}
   .disp>*{animation:in .8s var(--ease) both .15s}
   @keyframes in{from{clip-path:inset(100% 0 0 0);transform:translateY(14px)}to{clip-path:inset(0 0 0 0);transform:none}}
-  footer{padding:24px 0 28px;font:400 13px/1.4 var(--mono);color:var(--muted)}
-  @media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr);gap:36px}.roof{order:-1;max-width:440px;padding-top:0}h1{font-size:clamp(56px,16vw,96px);margin-bottom:20px}.lead{margin-bottom:24px}.disp .num{font-size:clamp(72px,22vw,140px)}}
+  @media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr);gap:36px}.roof{order:-1;max-width:440px;padding-top:0}h1{font-size:clamp(56px,16vw,96px);margin-bottom:28px}.disp .num{font-size:clamp(72px,22vw,140px)}}
   @media (prefers-reduced-motion:reduce){.disp>*{animation:none}.btn,.btn svg{transition:none}}
 </style>
 </head>
@@ -57,26 +50,17 @@
   <div class="wrap grid">
     <div>
       <h1>Wrong<br>turn.</h1>
-      <p class="lead">This page doesn't exist, or it has moved. Everything about GoGaze is on the homepage.</p>
       <a class="btn" href="/">Back to the homepage <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <ul class="more" aria-label="Or go straight to">
-        <li><a href="/#how">How it works</a></li>
-        <li><a href="/#brands">For brands</a></li>
-        <li><a href="/#owners">For taxi owners</a></li>
-        <li><a href="/#contact">Contact us</a></li>
-      </ul>
     </div>
     <div class="roof" aria-hidden="true">
       <div class="unit">
         <div class="disp">
-          <div class="top"><span>Off route</span><span>Error 404</span></div>
-          <div><p class="num">404</p><p class="sub">This street isn't on any route.</p></div>
+          <p class="num">404</p>
         </div>
       </div>
       <div class="rack"><i></i><i></i></div>
     </div>
   </div>
 </main>
-<footer><div class="wrap">© 2026 GoGaze, Kolkata, India</div></footer>
 </body>
 </html>
