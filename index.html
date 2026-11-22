@@ -542,6 +542,8 @@ body{margin:0;background:#0D0D0B}
 /* "I own a taxi" in the hero: phones only */
 .gg .hero .cta .cta-phone{display:none}
 @media (max-width:860px){.gg .hero .cta .cta-phone{display:inline-flex}}
+/* phones: the three city chips sit in one even row, name over status */
+@media (max-width:600px){.gg .next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;max-width:340px}.gg .next .chip{text-align:center;padding:9px 4px;line-height:1.4;border-radius:14px}.gg .next .sep{display:block;height:0;overflow:hidden}}
 </style>
 </head>
 <body>
@@ -703,8 +705,8 @@ body{margin:0;background:#0D0D0B}
     <p class="big" data-fill data-text="Kolkata" aria-label="Kolkata" style="padding-left:var(--gut)">Kolkata</p>
     <div class="wrap">
       <div class="city-row">
-        <p style="margin:0;max-width:520px;font-size:20px">Our first fleet of taxi-top screens runs in Kolkata. Pilot slots for brands are open now.</p>
-        <div class="next mono"><span class="chip y">Kolkata · First</span><span class="chip">Mumbai · Next</span><span class="chip">Bangalore · Next</span></div>
+        <p style="margin:0;max-width:520px;font-size:20px">Our first fleet runs in Kolkata. Pilot slots for brands are open now.</p>
+        <div class="next mono"><span class="chip y">Kolkata<span class="sep"> · </span>First</span><span class="chip">Mumbai<span class="sep"> · </span>Next</span><span class="chip">Bangalore<span class="sep"> · </span>Next</span></div>
       </div>
     </div>
   </section>
