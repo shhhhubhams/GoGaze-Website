@@ -24,22 +24,22 @@
   .logo svg{display:block;height:.74em;width:auto;fill:currentColor;overflow:visible}
   main{flex:1;display:flex;align-items:center;padding:clamp(24px,6vh,72px) 0}
   .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,6vw,96px);align-items:center}
-  h1{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(64px,10vw,150px);line-height:.86;letter-spacing:-.025em;text-transform:uppercase;margin:0 0 36px}
-  .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:16px;transition:transform .2s var(--ease)}
+  h1{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(56px,7.4vw,124px);line-height:.86;letter-spacing:-.025em;text-transform:uppercase;white-space:nowrap;margin:0 0 40px}
+  .btn{display:inline-flex;align-items:center;gap:10px;min-height:62px;padding:0 32px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:20px;transition:transform .2s var(--ease)}
   .btn:active{transform:scale(.97)}
-  .btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+  .btn svg{width:20px;height:20px;transition:transform .3s var(--ease)}
   @media (hover:hover){.btn:hover svg{transform:translateX(4px)}}
   a:focus-visible{outline:2px solid var(--cyan-ink);outline-offset:3px;border-radius:4px}
   /* the taxi-roof screen: the one loud thing on the page */
   .roof{padding-top:8px}
   .unit{border-radius:18px;padding:12px;background:linear-gradient(#1c1c19,#0d0d0b);box-shadow:0 40px 80px -30px rgba(13,13,11,.5)}
   .disp{position:relative;aspect-ratio:2/1;border-radius:8px;overflow:hidden;background:var(--taxi);color:var(--ink);padding:clamp(16px,3vw,32px);display:flex;flex-direction:column;justify-content:center;align-items:center}
-  .disp .num{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(96px,14vw,220px);line-height:.78;letter-spacing:-.04em;margin:0 0 10px}
+  .disp .num{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(96px,14vw,220px);line-height:.78;letter-spacing:-.04em;margin:0 0 clamp(28px,4.5vw,64px)}
   .rack{display:flex;justify-content:space-between;padding:0 14%;margin-top:-2px}
   .rack i{width:18%;height:16px;background:var(--taxi);border-radius:0 0 6px 6px}
   .disp>*{animation:in .8s var(--ease) both .15s}
   @keyframes in{from{clip-path:inset(100% 0 0 0);transform:translateY(14px)}to{clip-path:inset(0 0 0 0);transform:none}}
-  @media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr);gap:36px}.roof{order:-1;max-width:440px;padding-top:0}h1{font-size:clamp(56px,16vw,96px);margin-bottom:28px}.disp .num{font-size:clamp(72px,22vw,140px)}}
+  @media (max-width:860px){.grid{grid-template-columns:minmax(0,1fr);gap:36px}.roof{order:-1;max-width:440px;padding-top:0}h1{font-size:clamp(44px,13.5vw,96px);margin-bottom:32px}.disp .num{font-size:clamp(72px,22vw,140px)}}
   @media (prefers-reduced-motion:reduce){.disp>*{animation:none}.btn,.btn svg{transition:none}}
 </style>
 </head>
@@ -49,7 +49,7 @@
 <main>
   <div class="wrap grid">
     <div>
-      <h1>Wrong<br>turn.</h1>
+      <h1>Wrong turn.</h1>
       <a class="btn" href="/">Back to the homepage <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
     <div class="roof" aria-hidden="true">
