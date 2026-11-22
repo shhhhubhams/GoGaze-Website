@@ -542,8 +542,19 @@ body{margin:0;background:#0D0D0B}
 /* "I own a taxi" in the hero: phones only */
 .gg .hero .cta .cta-phone{display:none}
 @media (max-width:860px){.gg .hero .cta .cta-phone{display:inline-flex}}
-/* phones: the three city chips sit in one even row, name over status */
-@media (max-width:600px){.gg .next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;max-width:340px}.gg .next .chip{text-align:center;padding:9px 4px;line-height:1.4;border-radius:14px}.gg .next .sep{display:block;height:0;overflow:hidden}}
+/* phones: the rollout reads as a route: three stops on one line, Kolkata first (filled), the next cities hollow */
+@media (max-width:600px){
+  .gg .city-row p.city-line{font-size:18px!important;text-wrap:balance}
+  .gg .next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;width:100%}
+  .gg .next .chip{position:relative;background:none;border:0;border-radius:0;padding:26px 8px 0 0;text-align:left;line-height:1.3;color:#F3F0E8}
+  .gg .next .chip::before{content:"";position:absolute;left:0;top:3px;width:12px;height:12px;border-radius:50%;box-sizing:border-box;border:1.5px solid rgba(243,240,232,.6);background:var(--ink);z-index:1}
+  .gg .next .chip.y{color:var(--taxi)}
+  .gg .next .chip.y::before{background:var(--taxi);border-color:var(--taxi);box-shadow:0 0 0 4px rgba(255,194,26,.18)}
+  .gg .next .chip:not(:last-child)::after{content:"";position:absolute;left:12px;right:0;top:8.5px;border-top:1.5px dashed rgba(243,240,232,.32)}
+  .gg .next .sep{display:block;height:0;overflow:hidden}
+  .gg .next .st{display:block;margin-top:3px;font-family:var(--body);font-size:14px;letter-spacing:0;text-transform:none;color:var(--muted-d)}
+  .gg .next .chip.y .st{color:var(--taxi);opacity:.85}
+}
 </style>
 </head>
 <body>
@@ -705,8 +716,8 @@ body{margin:0;background:#0D0D0B}
     <p class="big" data-fill data-text="Kolkata" aria-label="Kolkata" style="padding-left:var(--gut)">Kolkata</p>
     <div class="wrap">
       <div class="city-row">
-        <p style="margin:0;max-width:520px;font-size:20px">Our first fleet runs in Kolkata. Pilot slots for brands are open now.</p>
-        <div class="next mono"><span class="chip y">Kolkata<span class="sep"> · </span>First</span><span class="chip">Mumbai<span class="sep"> · </span>Next</span><span class="chip">Bangalore<span class="sep"> · </span>Next</span></div>
+        <p class="city-line" style="margin:0;max-width:520px;font-size:20px">Our first fleet of taxi-top screens runs in Kolkata. Pilot slots for brands are open now.</p>
+        <div class="next mono"><span class="chip y">Kolkata<span class="sep"> · </span><span class="st">First</span></span><span class="chip">Mumbai<span class="sep"> · </span><span class="st">Next</span></span><span class="chip">Bangalore<span class="sep"> · </span><span class="st">Next</span></span></div>
       </div>
     </div>
   </section>

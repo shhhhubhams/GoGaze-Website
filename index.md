@@ -23,7 +23,7 @@ The same taxi screen can show different ads at different times of day, for examp
 
 ## Kolkata first
 
-Our first fleet runs in Kolkata. Pilot slots for brands are open now. Mumbai and Bangalore are next.
+Our first fleet of taxi-top screens runs in Kolkata. Pilot slots for brands are open now. Mumbai and Bangalore are next.
 
 ## Who it's for
 
