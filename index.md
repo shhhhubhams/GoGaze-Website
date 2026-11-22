@@ -54,8 +54,8 @@ We're raising our first round to put screens on Kolkata's roads. Incubated at II
 **What is taxi-top advertising?**
 Digital screens mounted on taxi roofs that show ads as the taxi drives through the city. GoGaze controls what plays remotely, so ads can change by area and time of day.
 
-**Can I choose to show my ad only in certain parts of Kolkata?**
-Yes. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times.
+**Which areas of Kolkata can my ad run in?**
+Yes. Pilot slots are open across Kolkata, including Park Street, Salt Lake Sector V, New Town, Gariahat, Esplanade, Ballygunge, Howrah, Camac Street, Dum Dum and Behala. You choose the areas and hours, and your ad plays only when a GoGaze taxi is in those areas at those times.
 
 **How quickly can I change my ad?**
 The same day. New creatives are pushed to the screens remotely, with no reprinting or reinstalling.
@@ -65,9 +65,6 @@ Every play is logged with location and time, and you get a report of where and w
 
 **How is this different from a static ad?**
 A static ad, like a printed board or a hoarding, shows the same thing everywhere, all day. A GoGaze screen is digital, so it can show different ads by area and time of day, change the same day without reprinting, and log every play.
-
-**Which areas of Kolkata can my ad run in?**
-Pilot slots are open across Kolkata, including Park Street, Salt Lake Sector V, New Town, Gariahat, Esplanade, Ballygunge, Howrah, Camac Street, Dum Dum and Behala. You pick the areas, and your ad plays only there.
 
 **How much does it cost?**
 Pilot rates depend on your areas and hours. Get in touch and we will share them on a call.
