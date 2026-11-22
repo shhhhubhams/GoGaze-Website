@@ -593,7 +593,6 @@ body{margin:0;background:#0D0D0B}
         <p>GoGaze puts digital screens on taxi roofs across Kolkata. Choose what plays, on which street, at what hour, and change it from your phone.</p>
         <div class="cta">
           <a class="btn btn-ink" href="#contact" data-role="Brand">Start your campaign <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a class="btn btn-ghost" href="#owners">I own a taxi</a>
         </div>
       </div>
 
@@ -1014,6 +1013,8 @@ function ggInit(root){
   qa('a[href="#brands"], a[href="#owners"]').forEach(function(a){on(a,'click',function(){cardPick=a.getAttribute('href').slice(1);pickT=Date.now();navOn(cardPick)})});
   var navIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)navOn(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
   ['how','brands','owners','investors','faq','contact'].forEach(function(id){var el=root.querySelector('#'+id);if(el)navIO.observe(el)});
+  // sections that are not in the menu (hero, Why GoGaze, hour picker, Kolkata) clear the highlight
+  qa('main > section').forEach(function(sec){if(!sec.id&&!sec.querySelector('#brands,#owners,#investors,#faq,#contact'))navIO.observe(sec)});
   cleanups.push(function(){navIO.disconnect()});
 
   // form: posts to data-endpoint if set (e.g. Formspree), else opens an email
