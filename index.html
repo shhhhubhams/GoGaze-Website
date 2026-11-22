@@ -539,6 +539,9 @@ body{margin:0;background:#0D0D0B}
 .gg .ov4{background:#0D0D0B}
 /* phones: no dot animation in Investors (laptops keep it) */
 @media (max-width:860px){.gg .net canvas{display:none}}
+/* "I own a taxi" in the hero: phones only */
+.gg .hero .cta .cta-phone{display:none}
+@media (max-width:860px){.gg .hero .cta .cta-phone{display:inline-flex}}
 </style>
 </head>
 <body>
@@ -583,6 +586,7 @@ body{margin:0;background:#0D0D0B}
         <p>GoGaze puts digital screens on taxi roofs across Kolkata. Choose what plays, on which street, at what hour, and change it from your phone.</p>
         <div class="cta">
           <a class="btn btn-ink" href="#contact" data-role="Brand">Start your campaign <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn btn-ghost cta-phone" href="#owners">I own a taxi</a>
         </div>
       </div>
 
