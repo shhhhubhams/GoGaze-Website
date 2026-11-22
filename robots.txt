@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Plain-text summary for AI tools: https://www.gogaze.in/llms.txt
 Sitemap: https://www.gogaze.in/sitemap.xml

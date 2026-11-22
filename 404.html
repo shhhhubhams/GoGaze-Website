@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | GoGaze</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3F0E8">
+<link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=3" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0D0D0B;--ink-2:#1A1A17;--paper:#F3F0E8;--taxi:#FFC21A;--cyan:#00C2F3;--cyan-ink:#006E94;--muted:#5E5B53;--ease:cubic-bezier(.2,.7,.2,1);
+    --display:'Bricolage Grotesque','Arial Narrow',sans-serif;--body:'Geist','Helvetica Neue',sans-serif;--mono:'Geist Mono',ui-monospace,monospace;--gut:clamp(16px,3vw,40px)}
+  *{box-sizing:border-box}
+  html{background:var(--paper)}
+  body{margin:0;min-height:100svh;display:flex;flex-direction:column;background-color:var(--paper);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .05 0 0 0 0 .05 0 0 0 0 .04 0 0 0 .10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .36 0 0 0 0 .3 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");color:var(--ink);font:400 18px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+  .wrap{width:100%;max-width:1340px;margin:0 auto;padding:0 var(--gut)}
+  header{padding:22px 0}
+  .logo{display:inline-flex;align-items:center;text-decoration:none;color:var(--cyan);line-height:1;font-size:30px;padding:11px 0;margin:-11px 0}
+  .logo svg{display:block;height:.74em;width:auto;fill:currentColor;overflow:visible}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(16px,3vh,40px) 0 clamp(64px,12vh,140px)}
+  .stage{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
+  /* the taxi-roof screen sets every other size on the page */
+  .roof{width:min(560px,100%)}
+  .unit{border-radius:18px;padding:12px;background:linear-gradient(#1c1c19,#0d0d0b);box-shadow:0 40px 80px -30px rgba(13,13,11,.5)}
+  .disp{container-type:inline-size;aspect-ratio:2/1;border-radius:8px;overflow:hidden;background:var(--taxi);color:var(--ink);display:flex;align-items:center;justify-content:center;padding-bottom:7%}
+  .num{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:34cqw;line-height:.8;letter-spacing:-.04em;margin:0}
+  .rack{display:flex;justify-content:space-between;padding:0 14%;margin-top:-2px}
+  .rack i{width:18%;height:16px;background:var(--taxi);border-radius:0 0 6px 6px}
+  h1{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(44px,14.5vw,98px);line-height:.9;letter-spacing:-.025em;text-transform:uppercase;white-space:nowrap;margin:56px 0 32px}
+  .btn{display:inline-flex;align-items:center;gap:12px;min-height:60px;padding:0 30px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:19px;transition:transform .2s var(--ease)}
+  .btn:active{transform:scale(.97)}
+  .btn svg{width:19px;height:19px;transition:transform .3s var(--ease)}
+  @media (hover:hover){.btn:hover svg{transform:translateX(4px)}}
+  a:focus-visible{outline:2px solid var(--cyan-ink);outline-offset:3px;border-radius:999px}
+  .num{animation:in .8s var(--ease) both .15s}
+  @keyframes in{from{clip-path:inset(100% 0 0 0);transform:translateY(14px)}to{clip-path:inset(0 0 0 0);transform:none}}
+  @media (max-width:600px){h1{margin:40px 0 28px}.btn{min-height:56px;font-size:18px;padding:0 26px}.rack i{height:12px}}
+  @media (prefers-reduced-motion:reduce){.num{animation:none}.btn,.btn svg{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="gg-logo" viewBox="0 0 2136 408"><path fill-rule="evenodd" d="M201 404C201 403 195 403 189 402C101 397 24 333 7 249C5 239 4 182 5 179C6 179 6 176 6 174C7 168 7 166 12 151C31 82 99 23 173 10C204 4 253 5 279 11C317 20 350 38 374 63C390 79 390 81 380 89C377 92 370 98 365 103C352 115 352 115 336 100C316 80 283 64 256 60C235 56 232 56 220 56C112 56 38 156 72 257C106 360 252 389 329 307C346 289 359 252 352 243C349 238 346 238 287 238C230 238 227 238 226 234C225 233 225 214 225 200C225 194 220 194 317 194C414 194 409 194 409 200C410 281 404 304 371 342C346 372 287 400 244 402C223 404 201 404 201 404ZM1035 404C1035 403 1030 403 1024 402C932 397 856 336 838 254C835 237 833 236 809 236C787 236 781 233 783 222C784 212 788 210 807 210C830 210 832 208 833 191C833 185 833 177 834 173C835 158 837 158 768 158C713 158 712 158 708 156C701 152 699 144 702 137C705 130 702 131 772 130C850 129 840 132 851 110C867 78 870 80 802 80C746 80 748 80 744 75C741 69 743 61 749 58C751 56 759 56 821 56C901 56 894 57 909 46C990 -15 1133 -9 1202 59C1218 74 1219 76 1211 84C1209 86 1202 92 1196 98C1183 110 1182 111 1173 102C1143 75 1110 60 1072 56C1068 56 1063 55 1060 55C1054 54 1048 54 1039 55C1036 56 1030 56 1026 57C978 60 929 94 908 136C861 229 916 335 1019 352C1100 365 1174 325 1185 261C1188 247 1186 241 1179 239C1177 239 1146 238 1111 238C1046 238 1043 238 1042 234C1041 233 1041 214 1041 200C1041 194 1035 194 1140 194C1238 194 1238 194 1240 198C1241 200 1242 255 1241 257C1240 257 1240 261 1240 265C1235 338 1162 399 1074 402C1066 403 1055 403 1048 404C1041 404 1035 404 1035 404ZM565 400C506 387 463 342 453 284C451 272 450 240 451 237C452 237 452 234 452 230C455 209 467 181 483 161C520 116 577 99 646 113C673 118 677 121 672 132C662 158 686 182 724 182C735 182 747 204 752 232C753 238 754 271 753 273C752 273 752 276 751 280C745 339 699 388 638 400C623 403 578 403 565 400ZM1362 400C1311 388 1285 359 1285 314C1285 270 1315 239 1367 226C1389 221 1427 220 1450 224C1457 226 1465 227 1467 228C1469 228 1474 229 1478 230C1498 235 1504 232 1502 219C1499 193 1491 180 1472 167C1440 145 1384 151 1344 180C1336 186 1335 186 1321 167C1307 148 1307 149 1322 139C1372 101 1467 99 1516 135C1535 149 1546 166 1552 191L1555 202L1555 295C1555 347 1555 389 1555 390C1555 399 1503 399 1503 390C1503 390 1503 386 1503 383C1503 369 1497 366 1485 375C1470 387 1457 393 1438 399C1424 403 1377 403 1362 400ZM1965 400C1904 389 1857 339 1850 279C1850 276 1850 273 1849 273C1849 272 1849 244 1849 243C1850 243 1850 239 1850 235C1855 180 1903 129 1963 117C1975 115 2025 116 2036 119C2087 133 2124 177 2130 228C2130 232 2130 235 2131 235C2132 237 2131 271 2130 273C2128 276 2130 276 2022 276C1944 276 1917 276 1914 277C1907 280 1907 286 1913 301C1928 339 1959 359 2004 358C2035 357 2048 352 2074 331C2089 319 2090 319 2101 328C2104 331 2109 334 2112 337C2121 343 2121 345 2112 356C2097 374 2072 390 2048 396C2025 403 1988 404 1965 400ZM1599 394C1598 393 1597 391 1597 390C1596 352 1593 360 1634 312C1638 307 1646 298 1651 291C1669 270 1673 265 1679 259C1682 255 1688 248 1692 242C1697 237 1702 230 1705 228C1708 225 1713 219 1716 214C1720 209 1726 202 1729 198C1743 182 1751 172 1751 171C1751 170 1751 169 1751 168C1752 167 1751 165 1750 163L1747 160L1680 160C1644 160 1613 160 1611 159C1607 159 1606 153 1607 126C1607 120 1600 120 1717 120C1834 120 1827 120 1827 126C1828 154 1827 158 1819 167C1813 173 1796 193 1790 201C1788 204 1779 214 1771 224C1763 233 1752 246 1748 252C1735 267 1719 286 1713 293C1711 296 1705 303 1701 308C1696 314 1688 324 1683 330C1673 342 1671 345 1673 349C1674 354 1675 354 1752 354C1830 354 1827 354 1827 360C1827 360 1827 367 1827 375C1827 383 1827 390 1827 390C1827 396 1834 396 1712 396C1602 396 1601 396 1599 394ZM1440 361C1475 352 1498 332 1501 304C1501 301 1501 298 1502 297C1504 288 1503 277 1499 273C1495 269 1468 262 1446 260C1442 260 1436 259 1434 259C1393 253 1348 272 1341 299C1329 342 1380 374 1440 361ZM618 356C673 347 705 296 695 237C684 180 638 148 582 157C529 166 496 227 512 286C527 337 569 364 618 356ZM2069 239C2088 233 2064 182 2036 168C2008 154 1971 156 1946 173C1920 191 1900 233 1915 239C1919 240 2064 240 2069 239ZM634 81C624 78 622 63 631 58C636 55 697 55 702 58C708 62 710 69 706 74C703 79 701 80 675 80C662 81 648 81 644 81C641 82 636 81 634 81Z"/></symbol></defs></svg>
+<header><div class="wrap"><a class="logo" href="/" aria-label="GoGaze home"><svg viewBox="0 0 2136 408" aria-hidden="true"><use href="#gg-logo"/></svg></a></div></header>
+<main>
+  <div class="wrap stage">
+    <div class="roof" aria-hidden="true">
+      <div class="unit"><div class="disp"><p class="num">404</p></div></div>
+      <div class="rack"><i></i><i></i></div>
+    </div>
+    <h1>Wrong turn.</h1>
+    <a class="btn" href="/">Back to the homepage <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</main>
+</body>
+</html>
